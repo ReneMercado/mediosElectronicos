@@ -1,0 +1,7 @@
+<div class="form-group input-group ">
+    <div class="custom-file clipFile input-f">
+        <input #hiddenInput id="fileInputHidden" type="file" class="hidden form-control" (change)="onChangeFile($event)" [accept]="accept" name="fileInputHidden">
+        <input id="fileTextName" readonly="readonly" [(ngModel)]="fileName" type="text" (click)="openFile($event)" class="form-control" name="fileTextName" placeholder="Seleccionar Archivo">
+        <span class="input-group-addon" (click)="openFile($event)"><button>Examinar</button></span>
+    </div>
+</div>

@@ -1,1 +1,435 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+.ag-cell-focus {
+    border: none !important;
+}
+
+.fix-header .topbar {
+    position: fixed;
+    width: 100%;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.fix-header .page-wrapper {
+    padding-top: 70px;
+}
+
+.fix-header .right-side-panel {
+    top: 70px;
+    height: calc(100% - 70px);
+}
+
+.card-no-border {
+    border: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.card-no-border .shadow-none {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+@font-face {
+    font-family: "Altivo_EL";
+    src: url("assets/fonts/Altivo/Altivo-ExtraLight.otf");
+}
+
+@font-face {
+    font-family: "Altivo_L";
+    src: url("assets/fonts/Altivo/Altivo-Light.otf");
+}
+
+@font-face {
+    font-family: "Altivo_Bold";
+    src: url("assets/fonts/Altivo/Altivo-Bold.otf");
+}
+
+@font-face {
+    font-family: "Altivo_R";
+    src: url("assets/fonts/Altivo/Altivo-Regular.otf");
+}
+
+
+/* ================================================================
+==============  GENERAL ======================================
+================================================================ */
+
+.font-altivo-el {
+    font-family: "Altivo_EL";
+}
+
+.hidden {
+    display: none!important;
+}
+
+
+/* ================================================================
+==============  CARDS ======================================
+================================================================ */
+
+.card-blue-text {
+    display: block;
+    color: #385dae;
+    font-size: 13px;
+    font-family: "Altivo_EL";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-header-text {
+    display: block;
+    color: black;
+    font-size: 15px;
+    font-family: "Altivo_EL";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-text {
+    display: block;
+    font-size: 12px;
+    font-family: "Altivo_EL";
+}
+
+
+/*-------------------------------------------------INICIO--------------*/
+
+.FormuInicio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.title .tl-logo {
+    margin-right: 2%;
+}
+
+.title .tl-logo img {
+    height: 12vh;
+}
+
+.title .tl-text {
+    font-family: "Altivo_L";
+    color: #385dae;
+}
+
+.title .tl-text h3 {
+    font-size: 30px;
+}
+
+.title .tl-text label {
+    font-size: 15px;
+}
+
+.boxes,
+.boxes .input-cb {
+    margin-bottom: 5%;
+}
+
+
+/* ================================================================
+==================  INPUTS-T ======================================
+================================================================ */
+
+.input-t {
+    font-family: "Altivo_EL";
+    width: 100%;
+    /* margin: 2% 0; */
+    height: 55px;
+}
+
+.input-t label {
+    display: block;
+    color: #385dae;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.input-t input {
+    font-family: "Altivo_L";
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #385dae;
+    color: #767676;
+    font-size: 18px;
+    padding: 2px 3px 1px 3px;
+}
+
+.span-error {
+    color: red;
+    font-family: "Altivo_L";
+    font-size: 11px;
+}
+
+
+/* ================================================================
+==============  INPUTS-P ======================================
+================================================================ */
+
+.input-p {
+    font-family: "Altivo_EL";
+    width: 100%;
+    margin: 2% 0;
+    height: 55px;
+}
+
+.input-p .medios {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #385dae;
+}
+
+.input-p label {
+    display: block;
+    color: #385dae;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.input-p input {
+    font-family: "Altivo_L";
+    display: inline-block;
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid #385dae;
+    color: #767676;
+    font-size: 18px;
+    padding: 2px 3px 1px 3px;
+    height: 30px;
+    margin: 0% auto;
+}
+
+.input-p button {
+    display: inline-block;
+    text-align: center;
+    height: 30px;
+    width: 9%;
+    margin: 0% auto;
+    background: none;
+    border: none;
+    color: #767676;
+    font-size: 2vh;
+}
+
+.isPass {
+    font-size: 40px!important;
+    text-security: disc;
+    -moz-text-security: disc;
+    -webkit-text-security: disc;
+    text-stroke-width: medium;
+    -moz-text-stroke-width: medium;
+    -webkit-text-stroke-width: medium;
+}
+
+
+/* ================================================================
+==============  BOTON AGREGAR EN CATALOGOS ======================================
+================================================================ */
+
+.blue-btn-icon {
+    font-family: "Altivo_R";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    padding: 5px;
+    float: right;
+    width: 90%;
+    border: none;
+    border-radius: 6px;
+    background: #385dae;
+    font-size: 14px;
+}
+
+
+/* Font Awesome sustituye <i> por svg */
+
+.blue-btn-icon svg {
+    color: white;
+}
+
+.blue-btn-icon:hover,
+.blue-btn-icon:focus {
+    color: white;
+    background: #2c4887;
+    outline: 0;
+}
+
+
+/* ================================================================
+==============  BOTON AZUL ======================================
+================================================================ */
+
+.btn {
+    font-family: "Altivo_R";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 6px;
+    background: #385dae;
+    display: inline-block;
+}
+
+.btn:hover,
+.btn:focus {
+    color: white;
+    background: #2c4887;
+    outline: 0;
+}
+
+
+/* ================================================================
+==============  TITULOS ======================================
+================================================================ */
+
+.sec-title {
+    display: block;
+    width: 100%;
+    font-family: "Altivo_EL";
+    color: #385dae;
+    font-size: 4vh;
+    margin: 2% 0;
+}
+
+.Sec-subTitle {
+    display: block;
+    width: 100%;
+    font-family: "Altivo_Bold";
+    text-transform: uppercase;
+    color: #385dae;
+    font-size: 1.7vh;
+    letter-spacing: 2.5px;
+    margin: 1% 0;
+}
+
+
+/* ================================================================
+==============  BOTON CATALOGOS ===================================
+================================================================ */
+
+.btnCat {
+    font-family: "Altivo_R";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    border: none;
+    display: inline-block;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+}
+
+.btnCat:hover,
+.btnCat:focus {
+    color: white;
+    /* background: #2c4887; */
+    color: #5e9cd3;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    outline: 0;
+}
+
+
+/* ================================================================
+==============  SELECT ===================================
+================================================================ */
+
+.input-s {
+    font-family: "Altivo_EL";
+    width: 100%;
+    margin: 2% 0;
+    height: 55px;
+    margin: 0 auto;
+}
+
+.input-s label {
+    display: block;
+    color: #385dae;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.input-s label.transp {
+    color: white;
+}
+
+.input-s .bootstrap-select {
+    width: 100%!important;
+}
+
+.input-s .bootstrap-select .btn {
+    font-family: "Altivo_L";
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #385dae;
+    color: #767676;
+    font-size: 18px;
+    padding: 2px 3px 1px 3px;
+    border-radius: 0;
+    background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.input-s .bootstrap-select .dropdown-menu>li>a {
+    font-family: "Altivo_EL";
+}
+
+.input-s .bootstrap-select.btn-group .dropdown-menu.inner {
+    max-height: 150px!important;
+}
+
+.input-s .selectpicker.btn-group .dropdown-menu.inner {
+    max-height: 150px!important;
+}
+
+
+/* ================================================================
+==============  BOTON En Modal ====================================
+================================================================ */
+
+.btnModal {
+    font-family: "Altivo_R";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    padding: 5px;
+    float: right;
+    width: 20%;
+    border: none;
+    border-radius: 6px;
+    background: #385dae;
+    font-size: 14px;
+}
+
+
+/* Font Awesome sustituye <i> por svg */
+
+.btnModal svg {
+    color: white;
+}
+
+.btnModal:hover,
+.btnModal:focus {
+    color: white;
+    background: #2c4887;
+    outline: 0;
+}

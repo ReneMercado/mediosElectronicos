@@ -1,0 +1,5 @@
+<div class="input-t form-group ">
+    <label>{{label}}<span  *ngIf="required" class="span-error"> *</span></label>
+    <input #inputMAS [ngModel]="textInput" name="textInput" (ngModelChange)="onChanges($event)" (blur)="onBlur($event)" autocomplete="off" class="form-control" [type]="type" [maxlength]="maxlength">
+    <span *ngIf="!validField" class="span-error">{{validatorMessage}}</span>
+</div>

@@ -1,0 +1,35 @@
+/* ================================================================
+==============  INPUT-FILE ======================================
+================================================================ */
+
+.clipFile svg {
+    height: 3vh;
+    display: inline-block;
+    margin-right: 1vw;
+    color: black;
+}
+
+.input-f {
+    font-family: "Altivo_EL";
+    width: 100%;
+    /* margin: 2% 0; */
+    height: 55px;
+}
+
+.input-f label {
+    display: block;
+    color: #385dae;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.input-f input {
+    font-family: "Altivo_L";
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #385dae;
+    color: #767676;
+    font-size: 18px;
+    padding: 2px 3px 1px 3px;
+}

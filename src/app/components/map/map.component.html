@@ -1,0 +1,11 @@
+<agm-map (mapClick)="onClickMap($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" style="height: 276px">
+    <agm-marker *ngFor="let marker of markers; let i = index" [latitude]="marker.lat" [longitude]="marker.lng">
+        <agm-info-window>
+            <strong> Titulo Marcador</strong>
+            <p>Descripcion de Marcador</p>
+            <div>
+                <button class="primary">Cerrar</button>
+            </div>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>

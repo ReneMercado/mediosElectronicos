@@ -1,0 +1,5 @@
+<div class="input-s form-group ">
+    <label>{{label}}<span  *ngIf="required" class="span-error"> *</span></label>
+    <select #inputSelectRef [(ngModel)]="inputSelect" name="inputSelect" [title]="title" (ngModelChange)="onChanges($event)" class="selectpicker input-selectpicker form-control" data-live-search="true">
+    </select>
+</div>

@@ -1,0 +1,58 @@
+/* ================================================================
+==================  LOGIN ======================================
+================================================================ */
+
+.login-box {
+    /* margin: 0 auto; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0 19vw;
+    align-items: center;
+}
+
+.login-box-shadow {
+    height: 100%;
+    /* width: 100%; */
+    padding: 4% 8% 1% 8%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 82, 82, 0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 82, 82, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(82, 82, 82, 0.5);
+}
+
+.btnLogin {
+    width: 100%;
+    text-align: center;
+}
+
+.btnLogin button {
+    margin: 0 auto;
+    width: 40%;
+}
+
+.recover {
+    width: 100%;
+    text-align: center;
+    margin: 5% auto;
+}
+
+.recover a {
+    color: #767676;
+    font-family: "Altivo_R";
+    font-size: 15px;
+}
+
+.recover a:hover {
+    color: #5d5d5d;
+    text-decoration: underline;
+}
+
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
