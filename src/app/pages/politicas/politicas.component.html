@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Politicas Empresa</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="politicas.RazonSocial = $event" label="Razon" [textInput]="politicas.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #fechaCorteAdd type="date" (cambioValor)="politicas.FechaCorte = $event" label="Fecha Corte" style="margin-left:1%;"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #fechaPagoAdd type="date" (cambioValor)="politicas.FechaPago = $event" label="Fecha Pago" style="margin-left:1%;"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8">
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Guardar
+    </button>
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Cancelar
+    </button>
+  </div>
+</div>

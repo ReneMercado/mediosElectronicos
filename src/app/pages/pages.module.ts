@@ -40,6 +40,7 @@ import { ZoomImageComponent } from '../components/zoom-image/zoom-image.componen
 import { NombreNuevoComponent } from './nombre-nuevo/nombre-nuevo.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { PoliticasComponent } from './politicas/politicas.component';
 
 
 // import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
@@ -74,6 +75,7 @@ import { ContactoComponent } from './contacto/contacto.component';
         NombreNuevoComponent,
         EmpresaComponent,
         ContactoComponent,
+        PoliticasComponent,
     ],
     exports: [
         DashboardComponent

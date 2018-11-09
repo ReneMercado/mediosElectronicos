@@ -4,19 +4,18 @@ import { MasInputTextComponent } from '../../components/mas-input-text/mas-input
 import { InputSelectComponent } from '../../components/input-select/input-select.component';
 import { NgForm } from '@angular/forms';
 import { Contacto } from '../../models/contacto';
+import { Politicas } from '../../models/politicas';
 
 @Component({
-  selector: 'app-contacto',
-  templateUrl: './contacto.component.html',
+  selector: 'app-politicas',
+  templateUrl: './politicas.component.html',
   styles: []
 })
-export class ContactoComponent implements OnInit {
+export class PoliticasComponent implements OnInit {
 
   constructor() { }
-
-  contacto: Contacto = new Contacto(0, '','','','','','','','','',0);
+  politicas: Politicas = new Politicas(0,'','','','');
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
-
 
   ngOnInit() {
   }

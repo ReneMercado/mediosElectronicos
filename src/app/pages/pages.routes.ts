@@ -7,6 +7,9 @@ import { VisitDetailComponent } from './visit-detail/visit-detail.component';
 import { UsersComponent } from './users/users.component';
 import { UserZonesComponent } from './user-zones/user-zones.component';
 import { EmpresaComponent } from './empresa/empresa.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { PoliticasComponent } from './politicas/politicas.component';
+
 
 // import { ProgressComponent } from './progress/progress.component';
 // import { Graficas1Component } from './graficas1/graficas1.component';
@@ -40,6 +43,9 @@ const pagesRoutes: Routes = [
     { path: 'users', component: UsersComponent, data: { titulo: 'Usuarios' } },
     { path: 'userzones', component: UserZonesComponent, data: { titulo: 'Asignacion-Rutas' } },
     { path: 'empresa', component: EmpresaComponent, data: { titulo: 'Empresas' } },
+    { path: 'contacto', component: ContactoComponent, data: { titulo: 'Contacto' } },
+    { path: 'politicas', component: PoliticasComponent, data: { titulo: 'Politicas' } },
+
     // { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas' } },
     // { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
     // { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
