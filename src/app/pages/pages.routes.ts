@@ -6,6 +6,7 @@ import { VisitsComponent } from './visits/visits.component';
 import { VisitDetailComponent } from './visit-detail/visit-detail.component';
 import { UsersComponent } from './users/users.component';
 import { UserZonesComponent } from './user-zones/user-zones.component';
+import { EmpresaComponent } from './empresa/empresa.component';
 
 // import { ProgressComponent } from './progress/progress.component';
 // import { Graficas1Component } from './graficas1/graficas1.component';
@@ -38,6 +39,7 @@ const pagesRoutes: Routes = [
     { path: 'visitDetail', component: VisitDetailComponent, data: { titulo: 'Detalle-Visita' } },
     { path: 'users', component: UsersComponent, data: { titulo: 'Usuarios' } },
     { path: 'userzones', component: UserZonesComponent, data: { titulo: 'Asignacion-Rutas' } },
+    { path: 'empresa', component: EmpresaComponent, data: { titulo: 'Empresas' } },
     // { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas' } },
     // { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
     // { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
@@ -54,7 +56,7 @@ const pagesRoutes: Routes = [
     // { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de Hospitales' } },
     // { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento de Médicos' } },
     // { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Médico' } },
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+    { path: '', redirectTo: '/empresa', pathMatch: 'full' }
 ];
 
 

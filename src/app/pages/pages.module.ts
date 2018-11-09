@@ -37,6 +37,9 @@ import 'ag-grid-enterprise';
 import { InputFileComponent } from '../components/input-file/input-file.component';
 import { MapComponent } from '../components/map/map.component';
 import { ZoomImageComponent } from '../components/zoom-image/zoom-image.component';
+import { NombreNuevoComponent } from './nombre-nuevo/nombre-nuevo.component';
+import { EmpresaComponent } from './empresa/empresa.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 // import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
@@ -68,6 +71,9 @@ import { ZoomImageComponent } from '../components/zoom-image/zoom-image.componen
         VisitDetailComponent,
         UsersComponent,
         UserZonesComponent,
+        NombreNuevoComponent,
+        EmpresaComponent,
+        ContactoComponent,
     ],
     exports: [
         DashboardComponent

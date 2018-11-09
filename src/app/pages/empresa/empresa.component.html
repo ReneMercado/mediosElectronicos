@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Alta Empresa</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <app-mas-input-text #numeroEmpresaAdd type="text" maxlength="50" (cambioValor)="empresa.Id_Empresa = $event" label="No.Empresa" [textInput]="empresa.Id_Empresa"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #nombreAdd type="text" maxlength="50" (cambioValor)="empresa.Nombre = $event" label="Empresa" [textInput]="empresa.Nombre" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-3">
+    <app-mas-input-text #rfcAdd type="text" maxlength="50" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RCF" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-input-select #estadosAddDDL (valueChanged)="onEstadoChanged($event)" title="Seleccionar Estado" optionValue="Id_Estado" valueShow="Estado" label="Estado" [inputSelect]="selectValE"></app-input-select>
+  </div>
+  <div class="col-4">
+    <app-input-select #municipiosAddDDL (valueChanged)="onMunicipioChanged($event)" title="Seleccionar Municipio" optionValue="Id_Municipio" valueShow="Municipio" label="Municipio" [inputSelect]="selectValM"></app-input-select>
+  </div>
+  <div class="col-4">
+    <app-input-select #coloniasAddDDL (valueChanged)="onColoniaChanged($event)" title="Seleccionar Colonia" optionValue="Id_Colonia" valueShow="Colonia" label="Colonia" [inputSelect]="selectValC"></app-input-select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #calleAdd type="text" maxlength="50" (cambioValor)="empresa.Calle = $event" label="Calle" [textInput]="empresa.Calle" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #numerointeriorAdd type="text" maxlength="50" (cambioValor)="empresa.NumeroInterior = $event" label="Numero Interior" [textInput]="empresa.NumeroInterior" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #numeroexteriorAdd type="text" maxlength="50" (cambioValor)="empresa.NumeroExterior = $event" label="Numero Exterior" [textInput]="empresa.NumeroExterior" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #cpAdd type="text" maxlength="50" (cambioValor)="empresa.CP = $event" label="CP" [textInput]="empresa.CP" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #telefonoAdd type="text" maxlength="50" (cambioValor)="empresa.Telefono = $event" label="Telefono" [textInput]="empresa.Telefono" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #cuentaAdd type="text" maxlength="50" (cambioValor)="empresa.Cuenta = $event" label="Cuenta" [textInput]="empresa.Cuenta" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #referenciaAdd type="text" maxlength="50" (cambioValor)="empresa.referencia = $event" label="Referencia" [textInput]="empresa.referencia" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-8">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+      <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+        Guardar
+      </button>
+    </div>
+    <div class="col-2" style="margin-top:3%">
+      <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
