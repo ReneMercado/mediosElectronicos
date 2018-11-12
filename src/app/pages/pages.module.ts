@@ -41,6 +41,8 @@ import { NombreNuevoComponent } from './nombre-nuevo/nombre-nuevo.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { PoliticasComponent } from './politicas/politicas.component';
+import { BajaEmpresaComponent } from './baja-empresa/baja-empresa.component';
+import { AltaEmpleadoComponent } from './alta-empleado/alta-empleado.component';
 
 
 // import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
@@ -76,6 +78,8 @@ import { PoliticasComponent } from './politicas/politicas.component';
         EmpresaComponent,
         ContactoComponent,
         PoliticasComponent,
+        BajaEmpresaComponent,
+        AltaEmpleadoComponent,
     ],
     exports: [
         DashboardComponent

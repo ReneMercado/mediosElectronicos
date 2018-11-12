@@ -18,7 +18,8 @@ export class Empresa {
     public Estado: string,
     public Telefono: string,
     public CuentaBancaria: string,
-    public Referencia: string
+    public Referencia: string,
+    public MotivoBaja: string
   ) { }
 
 }

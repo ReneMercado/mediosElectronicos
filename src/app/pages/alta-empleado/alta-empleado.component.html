@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Alta Empleado</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="contacto.RazonSocial = $event" label="Razon" [textInput]="contacto.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>

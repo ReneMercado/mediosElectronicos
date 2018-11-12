@@ -9,6 +9,9 @@ import { UserZonesComponent } from './user-zones/user-zones.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { PoliticasComponent } from './politicas/politicas.component';
+import { BajaEmpresaComponent } from './baja-empresa/baja-empresa.component';
+import { AltaEmpleadoComponent } from './alta-empleado/alta-empleado.component';
+
 
 
 // import { ProgressComponent } from './progress/progress.component';
@@ -45,6 +48,9 @@ const pagesRoutes: Routes = [
     { path: 'empresa', component: EmpresaComponent, data: { titulo: 'Empresas' } },
     { path: 'contacto', component: ContactoComponent, data: { titulo: 'Contacto' } },
     { path: 'politicas', component: PoliticasComponent, data: { titulo: 'Politicas' } },
+    { path: 'baja-empresa', component: BajaEmpresaComponent, data: { titulo: 'Baja-Empresa' } },
+    { path: 'alta-empleado', component: AltaEmpleadoComponent, data: { titulo: 'Alta-Empleado' } },
+
 
     // { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas' } },
     // { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },

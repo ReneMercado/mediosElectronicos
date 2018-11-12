@@ -31,7 +31,7 @@ export class EmpresaComponent implements OnInit {
   @ViewChild('municipiosAddDDL') municipiosAddDDL: InputSelectComponent;
   @ViewChild('coloniasAddDDL') coloniasAddDDL: InputSelectComponent;
 
-  empresa: Empresa = new Empresa(0,'','','','',0,'','','','','',0,'',0,'','','','');
+  empresa: Empresa = new Empresa(0,'','','','',0,'','','','','',0,'',0,'','','','','');
   selectValE = null;
   selectValM = null;
   selectValC = null;
