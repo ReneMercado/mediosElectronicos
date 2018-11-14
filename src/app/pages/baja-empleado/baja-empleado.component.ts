@@ -8,15 +8,17 @@ import { Empleado } from '../../models/empleado';
 
 
 @Component({
-  selector: 'app-alta-empleado',
-  templateUrl: './alta-empleado.component.html',
+  selector: 'app-baja-empleado',
+  templateUrl: './baja-empleado.component.html',
   styles: []
 })
-export class AltaEmpleadoComponent implements OnInit {
+export class BajaEmpleadoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
   empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '');
-  empleado: Empleado = new Empleado(0,'',0,'','','','','','','',0,'',0,'',0,'','','','','','','',0,0,'','',0,0,'','','','');
+  empleado: Empleado = new Empleado(0, '', 0, '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '','','');
+
+  @ViewChild('numeroEmpleadoAdd') numeroEmpleadoAdd: MasInputTextComponent;
 
   constructor() { }
 

@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Baja Empleado</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-3">
+    <app-mas-input-text #rfcAdd type="text" maxlength="50" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RCF" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <app-mas-input-text #numeroEmpleadoAdd type="text" maxlength="50" (cambioValor)="empleado.Id_Empleado = $event" label="No.Empleado" [textInput]="empleado.Id_Empleado" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Buscar
+    </button>
+  </div>
+</div>
+<br />
+<br />
+<div class="row">
+  <div class="col-1">
+    <label style="color:#385dae">Nombre:</label>
+  </div>
+  <div class="col-2">
+    <label style="color:#385dae">{{empleado.PrimerNombre}}</label>
+  </div>
+  <div class="col-4">
+
+  </div>
+  <div class="col-1">
+    <label style="color:#385dae">No.Tarjeta:</label>
+  </div>
+  <div class="col-2">
+    <label style="color:#385dae">{{empleado.Tarjeta}}</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <app-mas-input-text #motivoAdd type="text" maxlength="50" (cambioValor)="empleado.MotivoBaja = $event" label="Motivo" [textInput]="empleado.MotivoBaja" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>

@@ -30,7 +30,10 @@ export class Empleado {
     public MontoMaximo: number,
     public SaldoDisponible: number,
     public FechaVencimientoContrato: string,
-    public CargaMasiva: string
+    public CargaMasiva: string,
+    public Tarjeta: string,
+    public MotivoBaja: string
+
   ) { }
 
 }
