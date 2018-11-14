@@ -16,6 +16,8 @@ export class AltaEmpleadoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
   empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '');
+  empleado: Empleado = new Empleado(0,'',0,'','','','','','','',0,'',0,'',0,'','','','','','','',0,0,'','',0,0,'','');
+
   constructor() { }
 
   ngOnInit() {

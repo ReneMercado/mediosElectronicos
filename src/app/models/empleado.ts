@@ -24,11 +24,13 @@ export class Empleado {
     public Puesto: string,
     public FechaIngreso: string,
     public IngresoNeto: number,
-    public TipoNomina: number,
+    public Id_TipoNomina: number,
+    public TipoNomina: string,
     public FechaCorteNomina: string,
     public MontoMaximo: number,
     public SaldoDisponible: number,
-    public FechaVencimientoContrato: string
+    public FechaVencimientoContrato: string,
+    public CargaMasiva: string
   ) { }
 
 }

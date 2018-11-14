@@ -9,6 +9,29 @@
     <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
   </div>
   <div class="col-4">
-    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="contacto.RazonSocial = $event" label="Razon" [textInput]="contacto.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <app-input-select #tipoNominaTypeDDL (valueChanged)="onTipoNominaChanged($event)" title="Seleccionar Tipo de Nómina" optionValue="Id_TipoNomina" valueShow="TipoNomina" label="Tipo de Nómina" [inputSelect]="empleado.Id_TipoNomina"></app-input-select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <app-input-file #inputFile (fileTextChanged)="empleado.CargaMasiva = $event" accept=".csv"></app-input-file>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-8">
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Aceptar
+    </button>
   </div>
 </div>
