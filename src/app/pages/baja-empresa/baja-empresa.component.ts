@@ -13,11 +13,12 @@ import { Empresa } from '../../models/empresa';
 export class BajaEmpresaComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
-  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '','');
+  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '','',0,0,0,0,0,'');
 
   constructor() { }
 
   ngOnInit() {
+    this.empresaAddDDL.changeOptions([]);
   }
 
 }

@@ -18,12 +18,11 @@
 
 <div class="row">
   <div class="col-3">
-    <app-mas-input-text #numeroEmpleadoAdd type="text" maxlength="50" (cambioValor)="empleado.Id_Empleado = $event" label="No.Empleado" [textInput]="empleado.Id_Empleado" validate="alphanumeric"></app-mas-input-text>
+    <app-input-select #empleadoAddDDL (valueChanged)="onEmpleadoChanged($event)" title="Seleccionar Empleado" optionValue="Id_Empleado" valueShow="Empleado" label="Empleado" [inputSelect]="selectValEm"></app-input-select>
   </div>
-  <div class="col-2" style="margin-top:3%">
-    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
-      Buscar
-    </button>
+  <div class="col-3">
+    <label style="color:#385dae">Todos:</label>
+    <input type="checkbox" id="CheckAll"/>
   </div>
 </div>
 <br />
@@ -49,5 +48,21 @@
 <div class="row">
   <div class="col-6">
     <app-mas-input-text #motivoAdd type="text" maxlength="50" (cambioValor)="empleado.MotivoBaja = $event" label="Motivo" [textInput]="empleado.MotivoBaja" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Exportar
+    </button>
+  </div>
+  <div class="col-2" style="margin-top:3%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Aceptar
+    </button>
   </div>
 </div>

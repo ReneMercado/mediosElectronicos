@@ -17,8 +17,11 @@
 </div>
 
 <div class="row">
+  <div class="col-4">
+    <app-input-select #motivoAdd (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Motivo" optionValue="Id_Motivo" valueShow="Motivo" label="Motivo" [inputSelect]="selectValM"></app-input-select>
+  </div>
   <div class="col-12">
-    <app-mas-input-text #motivoAdd type="text" maxlength="50" (cambioValor)="empresa.MotivoBaja = $event" label="Motivo" [textInput]="empresa.MotivoBaja" validate="alphanumeric"></app-mas-input-text>
+    <app-mas-input-text #otroAdd type="text" maxlength="50" (cambioValor)="empresa.Otro = $event" label="Otro" [textInput]="empresa.Otro" validate="alphanumeric"></app-mas-input-text>
   </div>
 </div>
 <div class="row">

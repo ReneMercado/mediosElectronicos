@@ -6,24 +6,20 @@ import { NgForm } from '@angular/forms';
 import { Empresa } from '../../models/empresa';
 import { Empleado } from '../../models/empleado';
 
-
 @Component({
-  selector: 'app-alta-empleado',
-  templateUrl: './alta-empleado.component.html',
+  selector: 'app-modificacion-empleado',
+  templateUrl: './modificacion-empleado.component.html',
   styles: []
 })
-export class AltaEmpleadoComponent implements OnInit {
+export class ModificacionEmpleadoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
-  @ViewChild('tipoNominaTypeDDL') tipoNominaTypeDDL: InputSelectComponent;
   empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '',0,0,0,0,0,'');
-  empleado: Empleado = new Empleado(0,'',0,'','','','','','','',0,'',0,'',0,'','','','','','','',0,0,'','',0,0,'','','','');
-
+  empleado: Empleado = new Empleado(0, '', 0, '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '');
   constructor() { }
 
   ngOnInit() {
-    this.empresaAddDDL.changeOptions([{}]);
-    this.tipoNominaTypeDDL.changeOptions([{}]);
+    this.empresaAddDDL.changeOptions([]);
   }
 
 }

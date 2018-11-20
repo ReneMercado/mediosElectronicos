@@ -4,6 +4,8 @@ import { MasInputTextComponent } from '../../components/mas-input-text/mas-input
 import { InputSelectComponent } from '../../components/input-select/input-select.component';
 import { NgForm } from '@angular/forms';
 import { Empresa } from '../../models/empresa';
+import { Contacto } from '../../models/contacto';
+
 
 
 @Component({
@@ -13,7 +15,6 @@ import { Empresa } from '../../models/empresa';
 })
 export class EmpresaComponent implements OnInit {
 
-  @ViewChild('numeroEmpresaAdd') numeroEmpresaAdd: MasInputTextComponent;
   @ViewChild('nombreAdd') nombreAdd: MasInputTextComponent;
   @ViewChild('razonAdd') razonAdd: MasInputTextComponent;
   @ViewChild('rfcAdd') rfcAdd: MasInputTextComponent;
@@ -31,7 +32,8 @@ export class EmpresaComponent implements OnInit {
   @ViewChild('municipiosAddDDL') municipiosAddDDL: InputSelectComponent;
   @ViewChild('coloniasAddDDL') coloniasAddDDL: InputSelectComponent;
 
-  empresa: Empresa = new Empresa(0,'','','','',0,'','','','','',0,'',0,'','','','','');
+  contacto: Contacto = new Contacto(0, '', '', '', '', '', '', '', '', '', 0);
+  empresa: Empresa = new Empresa(0,'','','','',0,'','','','','',0,'',0,'','','','','',0,0,0,0,0,'');
   selectValE = null;
   selectValM = null;
   selectValC = null;
@@ -39,11 +41,13 @@ export class EmpresaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.estadosAddDDL.changeOptions([]);
+    this.municipiosAddDDL.changeOptions([]);
+    this.coloniasAddDDL.changeOptions([]);
   }
 
 
   Guardar() {
-    alert(this.numeroEmpresaAdd.textInput);
     alert(this.nombreAdd.textInput);
     alert(this.razonAdd.textInput);
     alert(this.rfcAdd.textInput);

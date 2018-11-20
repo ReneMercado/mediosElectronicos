@@ -12,6 +12,8 @@ import { PoliticasComponent } from './politicas/politicas.component';
 import { BajaEmpresaComponent } from './baja-empresa/baja-empresa.component';
 import { AltaEmpleadoComponent } from './alta-empleado/alta-empleado.component';
 import { BajaEmpleadoComponent } from './baja-empleado/baja-empleado.component';
+import { ModificacionEmpleadoComponent } from './modificacion-empleado/modificacion-empleado.component';
+
 
 
 
@@ -53,6 +55,8 @@ const pagesRoutes: Routes = [
     { path: 'baja-empresa', component: BajaEmpresaComponent, data: { titulo: 'Baja-Empresa' } },
     { path: 'alta-empleado', component: AltaEmpleadoComponent, data: { titulo: 'Alta-Empleado' } },
     { path: 'baja-empleado', component: BajaEmpleadoComponent, data: { titulo: 'Baja-Empleado' } },
+    { path: 'modificacion-empleado', component: ModificacionEmpleadoComponent, data: { titulo: 'Modificacion-Empleado' } },
+
 
     // { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas' } },
     // { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },

@@ -1,19 +1,10 @@
 <div class="row">
-  <div class="col-3">
-    <a href="#/empresa">Empresa/</a>
-    <a href="#/contacto">Contacto/</a>
-    <a href="#/politicas">Politicas</a>
-  </div>
   <div class="col-10">
-    <div class="Sec-subTitle">Alta Empresa</div>
+    <div class="Sec-subTitle">Empresa</div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-3">
-    <app-mas-input-text #numeroEmpresaAdd type="text" maxlength="50" (cambioValor)="empresa.Id_Empresa = $event" label="No.Empresa" [textInput]="empresa.Id_Empresa"></app-mas-input-text>
-  </div>
-</div>
+
 <div class="row">
   <div class="col-4">
     <app-mas-input-text #nombreAdd type="text" maxlength="50" (cambioValor)="empresa.Nombre = $event" label="Empresa" [textInput]="empresa.Nombre" validate="alphanumeric"></app-mas-input-text>
@@ -63,18 +54,82 @@
     <app-mas-input-text #referenciaAdd type="text" maxlength="50" (cambioValor)="empresa.referencia = $event" label="Referencia" [textInput]="empresa.referencia" validate="alphanumeric"></app-mas-input-text>
   </div>
 </div>
-  <div class="row">
-    <div class="col-8">
-    </div>
-    <div class="col-2" style="margin-top:3%">
-      <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
-        Guardar
-      </button>
-    </div>
-    <div class="col-2" style="margin-top:3%">
-      <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
-        Cancelar
-      </button>
-    </div>
+
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Contacto</div>
   </div>
+</div>
+
+
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #nombreAdd type="text" maxlength="50" (cambioValor)="contacto.Nombre = $event" label="Nombre" [textInput]="contacto.Nombre" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #paternoAdd type="text" maxlength="50" (cambioValor)="contacto.ApellidoPaterno = $event" label="Apellido Paterno" [textInput]="contacto.ApellidoPaterno" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #maternoAdd type="text" maxlength="50" (cambioValor)="contacto.ApellidoMaterno = $event" label="Apellido Materno" [textInput]="contacto.ApellidoMaterno" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #puestoAdd type="text" maxlength="50" (cambioValor)="contacto.Puesto = $event" label="Puesto" [textInput]="contacto.Puesto" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-2">
+    <app-mas-input-text #extAdd type="text" maxlength="50" (cambioValor)="contacto.Extension = $event" label="Ext." [textInput]="contacto.Extension" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #correoAdd type="text" maxlength="50" (cambioValor)="contacto.Correo = $event" label="Correo" [textInput]="contacto.Correo" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #telefonoOficinaAdd type="text" maxlength="50" (cambioValor)="contacto.TelefonoOficina = $event" label="Telefono Oficina" [textInput]="contacto.TelefonoOficina" validate="alphanumeric"></app-mas-input-text>
+  </div>
+  <div class="col-4">
+    <app-mas-input-text #telefonoCelularAdd type="text" maxlength="50" (cambioValor)="contacto.TelefonoCelular = $event" label="Telefono Celular" [textInput]="contacto.TelefonoCelular" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-10">
+    <div class="Sec-subTitle">Politicas</div>
+  </div>
+</div>
+
+<div class="row">
+  <label style="color:#385dae;margin-left:1%;">Aviso de corte</label>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #semanalAdd type="text" maxlength="50" (cambioValor)="empresa.Semanal = $event" label="Semanal" [textInput]="empresa.Semanal" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+      <app-mas-input-text #catorcenalAdd type="text" maxlength="50" (cambioValor)="empresa.Catorcenal = $event" label="Catorcenal" [textInput]="empresa.Catorcenal" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <app-mas-input-text #QuincenalAdd type="text" maxlength="50" (cambioValor)="empresa.Quincenal = $event" label="Quincenal" [textInput]="empresa.Quincenal" validate="alphanumeric"></app-mas-input-text>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+  </div>
+  <div class="col-2" style="margin-top:2%">
+    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+      Guardar
+    </button>
+  </div>
+</div>
+
 

@@ -15,7 +15,9 @@ import { Empleado } from '../../models/empleado';
 export class BajaEmpleadoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
-  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '');
+  @ViewChild('empleadoAddDDL') empleadoAddDDL: InputSelectComponent;
+
+  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '',0,0,0,0,0,'');
   empleado: Empleado = new Empleado(0, '', 0, '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '','','');
 
   @ViewChild('numeroEmpleadoAdd') numeroEmpleadoAdd: MasInputTextComponent;
@@ -23,6 +25,8 @@ export class BajaEmpleadoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.empresaAddDDL.changeOptions([]);
+    this.empleadoAddDDL.changeOptions([]);
   }
 
 }

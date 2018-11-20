@@ -44,6 +44,7 @@ import { PoliticasComponent } from './politicas/politicas.component';
 import { BajaEmpresaComponent } from './baja-empresa/baja-empresa.component';
 import { AltaEmpleadoComponent } from './alta-empleado/alta-empleado.component';
 import { BajaEmpleadoComponent } from './baja-empleado/baja-empleado.component';
+import { ModificacionEmpleadoComponent } from './modificacion-empleado/modificacion-empleado.component';
 
 
 // import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
@@ -82,6 +83,7 @@ import { BajaEmpleadoComponent } from './baja-empleado/baja-empleado.component';
         BajaEmpresaComponent,
         AltaEmpleadoComponent,
         BajaEmpleadoComponent,
+        ModificacionEmpleadoComponent,
     ],
     exports: [
         DashboardComponent

@@ -18,6 +18,7 @@ export class PoliticasComponent implements OnInit {
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
 
   ngOnInit() {
+    this.empresaAddDDL.changeOptions([]);
   }
 
 }

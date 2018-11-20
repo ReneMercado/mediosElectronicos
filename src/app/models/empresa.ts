@@ -19,7 +19,13 @@ export class Empresa {
     public Telefono: string,
     public CuentaBancaria: string,
     public Referencia: string,
-    public MotivoBaja: string
+    public Motivo: string,
+    public Semanal: number,
+    public Catorcenal: number,
+    public Quincenal: number,
+    public Mensual: number,
+    public Id_Motivo: number,
+    public Otro: string
   ) { }
 
 }
