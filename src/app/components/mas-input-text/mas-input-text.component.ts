@@ -13,11 +13,11 @@ export class MasInputTextComponent implements OnInit {
   @Input() validate: string = ''; // Regex a Ejecutar para validar input (Alphanumeric, number, etc.)
   @Input() type: string = ''; // Tipo del input (HTML) EJ. Number, Text, Email, etc.
   @Input() textInput: string = ''; // Valor/Modelo del Input
-  @Input() required: boolean = false; // Valor/Modelo del Input
-
+  @Input() required: boolean = false;
+  @Input() disabled: boolean = false;
   @Input() maxlength: string = '';
-  @Input() lowercase: string = 'false';
-  @Input() uppercase: string = 'false';
+  @Input() lowercase: boolean = false;
+  @Input() uppercase: boolean = false;
 
   // Evento emitido al cambiar el valor del input
   // Se iguala la variable del modelo de la pantalla al retorno que se emite
@@ -29,12 +29,16 @@ export class MasInputTextComponent implements OnInit {
 
   ngOnInit() {
     this.setMessageValidator();
+
+    if (this.disabled) {
+      $(this.inputMAS.nativeElement).attr('disabled', 'disabled');
+    }
   }
 
   setMessageValidator() {
     switch (this.validate) {
       case 'alphanumeric':
-        this.validatorMessage = 'Solo se aceptan valores Alfanumérico';
+        this.validatorMessage = 'Solo se aceptan valores alfanumérico';
         break;
       case 'email':
         this.validatorMessage = 'Ingrese un correo valido';
@@ -42,16 +46,19 @@ export class MasInputTextComponent implements OnInit {
       case 'money':
         this.validatorMessage = 'Formato de moneda no valido (###,###.##)';
         break;
+      case 'alphanumericNoSpace':
+        this.validatorMessage = 'Solo se aceptan valores alfanumérico sin espacios';
+        break;
       default:
         break;
     }
   }
 
   validateCaseSensitive(newValue) {
-    if (this.lowercase === 'true') {
-      return newValue.toUpperCase();
-    } else if (this.uppercase === 'true') {
+    if (this.lowercase) {
       return newValue.toLowerCase();
+    } else if (this.uppercase) {
+      return newValue.toUpperCase();
     } else {
       return newValue;
     }
@@ -137,6 +144,14 @@ export class MasInputTextComponent implements OnInit {
     switch (this.validate) {
       case 'alphanumeric':
         regExp = /^([a-zA-Z0-9 ]+)$/;
+        if (!regExp.test(fieldValue)) {
+          this.validField = false;
+        } else {
+          this.validField = true;
+        }
+        break;
+      case 'alphanumericNoSpace':
+        regExp = /^[A-Za-z0-9]*$/;
         if (!regExp.test(fieldValue)) {
           this.validField = false;
         } else {

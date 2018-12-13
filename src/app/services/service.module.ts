@@ -1,13 +1,10 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 import { LoaderService } from '../shared/loader/loader.service';
 
 import {
-    // SettingsService,
-    // SidebarService,
-    // SharedService,
     UsuarioService,
     LoginGuardGuard,
     AdminGuard,
@@ -15,11 +12,8 @@ import {
     SucursalService,
     VisitaService,
     TipoVisitaService,
-    ZonasService
-    // SubirArchivoService,
-    // HospitalService,
-    // MedicoService,
-    // VerificaTokenGuard
+    ZonasService,
+    AuthInterceptor
 } from './service.index';
 
 
@@ -29,6 +23,7 @@ import {
         HttpClientModule
     ],
     providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         UsuarioService,
         LoginGuardGuard,
         AdminGuard,
@@ -37,7 +32,7 @@ import {
         VisitaService,
         TipoVisitaService,
         ZonasService,
-        LoaderService
+        LoaderService,
         // SharedService,
         // SubirArchivoService,
         // ModalUploadService,

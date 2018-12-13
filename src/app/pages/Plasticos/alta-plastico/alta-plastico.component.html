@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-10">
+        <div class="Sec-subTitle">Alta Lote de Tarjetas</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <app-input-select #empresaAddDDL (valueChanged)="params.Empresa_Id = $event" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="params.Empresa_Id"></app-input-select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="params.RazonSocial = $event" label="Razon" [textInput]="params.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text #rfcAdd type="text" maxlength="50" (cambioValor)="params.RFC = $event" label="RFC" [textInput]="params.RFC" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-input-file #inputFile (fileTextChanged)="params.CargaMasiva = $event" accept=".csv"></app-input-file>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-8">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="guardarPlasticos()">
+      Aceptar
+    </button>
+    </div>
+</div>
+
+<br>
+<div class="row" *ngIf="showResultDiv">
+    <div class="col-12">
+        <label>Total Cargados: ####</label>
+        <br>
+        <label>Total Fallidos: ####</label>
+        <div style="width: 50%; height: 275px">
+            <app-grid #gridVisit [rowData]="rowData" [columnDefs]="columnDefs"></app-grid>
+        </div>
+    </div>
+</div>
+<br>

@@ -1,6 +1,6 @@
 <div class="container vertical-center">
-    <div class="login-box card">
-        <div class="card-body login-box-shadow justify-content-center">
+    <div class="login-box">
+        <div class="login-box-shadow justify-content-center">
             <div class="row">
                 <div class="title col-12">
                     <div class="tl-logo">
@@ -8,36 +8,41 @@
                     </div>
                     <div class="col-12 tl-text">
                         <h2 class="tl-text">Inicio de sesión</h2>
-                        <label>Administración</label>
+                        <label>SISTEMA DE INVESTIGACIÓN Y COBRANZA</label>
                     </div>
                 </div>
             </div>
-            <div class="row ">
-                <form ngNativeValidate #f="ngForm" (ngSubmit)="ingresar( f )">
-                    <div class="form-group ">
-                        <div class="input-t form-group ">
-                            <label>Usuario</label>
-                            <input [ngModel]="userId" name="userId" autocomplete="off" required="" class="form-control " type="text" maxlength="10">
-                        </div>
-                        <div class="input-p form-group">
-                            <label>Contraseña</label>
-                            <div class="input-group">
-                                <input [ngModel]="password" name="password" autocomplete="off" required="" type="password " class="isPass form-control" maxlength="10 ">
-                                <div class="input-group-append">
-                                    <button class="flaticon-visibility-button" id="ShowPass"></button>
+            <div class="row">
+                <div class="col-12">
+                    <form ngNativeValidate #f="ngForm" (ngSubmit)="ingresar( f )">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-t form-group">
+                                    <label>Usuario</label>
+                                    <input [(ngModel)]="userId" name="userId" autocomplete="off" required="" class="form-control " type="text" maxlength="20">
+                                </div>
+                                <div class="input-p form-group">
+                                    <label>Contraseña</label>
+                                    <input [(ngModel)]="password" id="password" name="password" autocomplete="off" required="" type="password " class="isPass form-control" maxlength="10">
+                                    <div class="input-group-append" style="display: inline-block;">
+                                        <button (click)="onTogglePassword($event, 'password')" type="button" class="flaticon-visibility-button togglePassword"></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="btnLogin ">
-                        <button type="submit " id="LogIn " class="btn ">Entrar</button>
-                    </div>
-                    <div class="recover " id="RecuperaCon ">
-                        <a style="cursor: pointer; ">Recuperar mi Contraseña</a>
-                    </div>
-                </form>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="btnLogin ">
+                                    <button type="submit " id="LogIn " class="btn ">Entrar</button>
+                                </div>
+                                <div class="recover " id="RecuperaCon ">
+                                    <a style="cursor: pointer;" (click)="recuperarPassword()">Recuperar mi Contraseña</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
 </div>

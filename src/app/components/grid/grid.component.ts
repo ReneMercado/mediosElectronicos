@@ -104,13 +104,13 @@ export class GridComponent implements OnInit {
     rowSelection: 'single',
     // localeText: this.localeText,
     enableSorting: true,
-    enableFilter: true,
-    pagination: true,
-    paginationAutoPageSize: true,
+    enableFilter: false,
+    // pagination: false,
+    // paginationAutoPageSize: true,
     rowHeight: 34,
-    defaultColDef: {
-      menuTabs: ['filterMenuTab']
-    }
+    // defaultColDef: {
+    //   menuTabs: ['filterMenuTab']
+    // }
   };
 
   @Input() columnDefs: Array<object> = [{}];

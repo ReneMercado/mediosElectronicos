@@ -21,6 +21,7 @@ export class InputSelectComponent implements OnInit {
   @Input() defaultValue: string = ''; // Valor Default
 
   @Input() required: boolean = false;
+  @Input() disabled: boolean = false;
 
   @Output() valueChanged: EventEmitter<string> = new EventEmitter();
 
@@ -31,14 +32,14 @@ export class InputSelectComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.disabled) {
+      $(this.inputSelectRef.nativeElement).attr('disabled', 'disabled');
+    }
   }
-
-
 
   onChanges(newValue) {
     this.valueChanged.emit(newValue);
   }
-
 
   changeOptions(newOptions: Array<object>, selectValue?: any) {
 
@@ -67,5 +68,16 @@ export class InputSelectComponent implements OnInit {
   valid() {
     let value = this.getSelected();
     return (this.required && value) || (!this.required);
+  }
+
+  enable() {
+    $(this.inputSelectRef.nativeElement).removeAttr('disabled');
+    $(this.inputSelectRef.nativeElement).selectpicker('refresh');
+
+  }
+
+  disable() {
+    $(this.inputSelectRef.nativeElement).attr('disabled', 'disabled');
+    $(this.inputSelectRef.nativeElement).selectpicker('refresh');
   }
 }

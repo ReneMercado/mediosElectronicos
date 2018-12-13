@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="col-12">
+        <div class="Sec-subTitle">Modificación Empleado</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+        <div class="Sec-subTitle">Datos Personales</div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.PrimerNombre = $event" label="Primer Nombre" [textInput]="empleado.PrimerNombre" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.SegundoNombre = $event" label="Segundo Nombre" [textInput]="empleado.SegundoNombre" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.ApellidoPaterno = $event" label="Apellido Paterno" [textInput]="empleado.ApellidoPaterno" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.ApellidoMaterno = $event" label="Apellido Materno" [textInput]="empleado.ApellidoMaterno" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="date" maxlength="150" (cambioValor)="empleado.FechaNacimiento = $event" label="Fecha de Nacimiento" [textInput]="empleado.FechaNacimiento"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.RFC = $event" label="RFC" [textInput]="empleado.RFC" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.CURP = $event" label="CURP" [textInput]="empleado.CURP" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+        <div class="Sec-subTitle">Dirección</div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.Calle = $event" label="Calle" [textInput]="empleado.Calle" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.NumExt = $event" label="NumExt" [textInput]="empleado.NumExt" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.NumInt = $event" label="NumInt" [textInput]="empleado.NumInt" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-input-select #coloniaDDL (valueChanged)="empleado.Id_Colonia = $event" title="Seleccionar Colonia" optionValue="Id_Colonia" valueShow="Nombre" label="Colonia"></app-input-select>
+    </div>
+    <div class="col-4">
+        <app-input-select #municipioDDL (valueChanged)="empleado.Id_Municipio = $event" title="Seleccionar Municipio" optionValue="Id_Municipio" valueShow="Nombre" label="Municipio"></app-input-select>
+    </div>
+    <div class="col-4">
+        <app-input-select #estadoDDL (valueChanged)="empleado.Id_Estado = $event" title="Seleccionar Estado" optionValue="Id_Estado" valueShow="Nombre" label="Estado"></app-input-select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.TelefonoFijo = $event" label="Telefono Fijo" [textInput]="empleado.TelefonoFijo" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.TelefonoCelular = $event" label="TelefonoC elular" [textInput]="empleado.TelefonoCelular" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-6"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+        <div class="Sec-subTitle">Datos de Empleado</div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="date" maxlength="150" (cambioValor)="empleado.FechaIngreso = $event" label="Fecha de Ingreso" [textInput]="empleado.FechaIngreso"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="date" maxlength="150" (cambioValor)="empleado.FechaVencimientoContrato = $event" label="Fecha de Vencimiento de Contrato" [textInput]="empleado.FechaVencimientoContrato"></app-mas-input-text>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-input-select #frecuenciaPagoDDL (valueChanged)="empleado.FrecuenciaPago_Id = $event" title="Seleccionar Frecuencia de Pago" optionValue="Id_FrecuenciaPago" valueShow="Nombre" label="Frecuencia de Pago"></app-input-select>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.MontoMaximo = $event" label="Monto Max. Autorizado" [textInput]="empleado.MontoMaximo" validate="money"></app-mas-input-text>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-input-select #estatusDDL (valueChanged)="empleado.Estatus_Id = $event" title="Seleccionar Estatus" optionValue="Id_Estatus" valueShow="Nombre" label="Estatus"></app-input-select>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-8">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button">
+      Actualizar
+    </button>
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button">
+      Cancelar
+    </button>
+    </div>
+</div>
+<br>

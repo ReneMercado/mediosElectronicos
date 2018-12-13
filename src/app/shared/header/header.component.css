@@ -107,8 +107,21 @@ li.a:focus {
     padding-right: 5vw;
 }
 
-.nb-list-1 .nb-close i {
-    margin: 0 2%;
+.nb-close li {
+    /* margin: 0 2%; */
+    font-family: "Altivo_R";
+}
+
+.nb-close a,
+.nb-close i {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    font-size: 15px;
+    color: #333;
+    white-space: nowrap;
 }
 
 .navbar-nav {
@@ -121,9 +134,18 @@ li.a:focus {
     text-align: center;
 }
 
+.divider {
+    height: 1px;
+    width: 100%;
+    display: block;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
 
-/* .navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0 25%;
-} */
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}

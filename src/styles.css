@@ -144,7 +144,7 @@
 .input-t {
     font-family: "Altivo_EL";
     width: 100%;
-    /* margin: 2% 0; */
+    margin: 2% 0 !important;
     height: 55px;
 }
 
@@ -350,7 +350,7 @@
 .input-s {
     font-family: "Altivo_EL";
     width: 100%;
-    margin: 2% 0;
+    margin: 2% 0 !important;
     height: 55px;
     margin: 0 auto;
 }

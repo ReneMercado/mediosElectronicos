@@ -3,6 +3,7 @@ export class Empleado {
   constructor(
     public Id_Empresa: number,
     public Empresa: string,
+    public NumEmpleado: string,
     public Id_Empleado: number,
     public RFC: string,
     public CURP: string,
@@ -11,6 +12,9 @@ export class Empleado {
     public ApellidoPaterno: string,
     public ApellidoMaterno: string,
     public FechaNacimiento: string,
+    public Calle: string,
+    public NumExt: string,
+    public NumInt: string,
     public Id_Estado: number,
     public Estado: string,
     public Id_Municipio: number,
@@ -32,7 +36,10 @@ export class Empleado {
     public FechaVencimientoContrato: string,
     public CargaMasiva: string,
     public Tarjeta: string,
-    public MotivoBaja: string
+    public MotivoBaja: string,
+    public FrecuenciaPago: string,
+    public FrecuenciaPago_Id: string,
+    public Estatus_Id: string
 
   ) { }
 

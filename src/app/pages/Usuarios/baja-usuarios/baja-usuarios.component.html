@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-12">
+        <div class="sec-title">Administración de Usuarios</div>
+        <form #searhForm="ngForm">
+            <div class="row">
+                <div class="col-4">
+                    <app-mas-input-text type="text" (cambioValor)="userAlias = $event" label="Usuario"></app-mas-input-text>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-2 right">
+                    <button class="blue-btn-icon btn-primary" type="button" (click)="onFindUser()">
+                      <i class="fas fa-search"></i>  Buscar
+                  </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="Sec-subTitle">Datos de Usuarios</div>
+        <div class="row">
+            <div class="col-6">
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.Alias" (cambioValor)="usuario.Alias = $event" label="Nombre"></app-mas-input-text>
+            </div>
+            <div class="col-6">
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.Correo" (cambioValor)="usuario.Correo = $event" label="Correo"></app-mas-input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.LugarSucursal" (cambioValor)="usuario.LugarSucursal = $event" label="Sucursal"></app-mas-input-text>
+            </div>
+            <div class="col-6">
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.Fec_UltAcceso" (cambioValor)="$event" label="Ultimo Acceso"></app-mas-input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.Estatus" (cambioValor)="usuario.Estatus = $event" label="Estatus"></app-mas-input-text>
+            </div>
+            <div class="col-6">
+                <app-input-select #tipoInactivoDLL [disabled]="true" (valueChanged)="usuario.TipInactivo = $event" title="Seleccionar Motivo de Bloqueo" optionValue="Id_TipoInactivo" valueShow="Descripcion" label="Motivo de Bloqueo" [inputSelect]="usuario.TipInactivo"></app-input-select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-2">
+        <button class="blue-btn-icon btn-primary" type="button">
+        <i class="fas fa-user"></i>  Desbloquear
+    </button>
+    </div>
+    <div class="col-2">
+        <button class="blue-btn-icon btn-primary" type="button">
+        <i class="fas fa-user-slash"></i>  Bloquear
+    </button>
+    </div>
+</div>

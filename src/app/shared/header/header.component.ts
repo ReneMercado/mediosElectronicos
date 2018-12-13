@@ -3,7 +3,7 @@ import { UsuarioService } from '../../services/service.index';
 // import { Usuario } from '../../models/usuario.model';
 import { Router } from '@angular/router';
 
-import * as $ from 'jquery';
+// import * as $AB from 'jquery';
 
 
 @Component({
@@ -14,6 +14,12 @@ import * as $ from 'jquery';
 export class HeaderComponent implements OnInit {
 
   // usuario: Usuario;
+  ultimoAcceso = localStorage.getItem('FechaUltAcceso');
+  userName = localStorage.getItem('userName');
+
+  oldPass = '';
+  newPass = '';
+  newPassConfirm = '';
 
   constructor(
     public _usuarioService: UsuarioService,
@@ -49,4 +55,36 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onChangePassword() {
+    this.oldPass = '';
+    this.newPass = '';
+    this.newPassConfirm = '';
+    $('#changePassModal').modal('show');
+  }
+
+  onTogglePassword(event: Event, idElement) {
+    let x: any = document.getElementById(idElement);
+    if (x.type === 'password') {
+      x.type = 'text';
+      $('#' + idElement).addClass('noPass');
+      $('#' + idElement).removeClass('isPass');
+      $(event.currentTarget).removeClass('flaticon-visibility-button').addClass('flaticon-turn-visibility-off-button');
+    } else {
+      x.type = 'password';
+      $('#' + idElement).addClass('isPass');
+      $('#' + idElement).removeClass('noPass');
+      $(event.currentTarget).removeClass('flaticon-turn-visibility-off-button').addClass('flaticon-visibility-button');
+    }
+  }
+
+  async onChangePasswordSubmit() {
+    try {
+      let result = await this._usuarioService.changePassword(localStorage.getItem('userName'),
+        this.oldPass, this.newPass, this.newPassConfirm);
+      swal('Exito!', result.Err_Mensaje, 'success');
+      $('#changePassModal').modal('hide');
+    } catch (e) {
+      swal('Error', e.Err_Mensaje || e.message, 'error');
+    }
+  }
 }
