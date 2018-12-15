@@ -17,8 +17,8 @@ export class BajaEmpleadoComponent implements OnInit {
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
   @ViewChild('empleadoAddDDL') empleadoAddDDL: InputSelectComponent;
 
-  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '',0,0,0,0,0,'');
-  empleado: Empleado = new Empleado(0, '', 0, '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '','','');
+  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '', 0, 0, 0, 0, 0, '');
+  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
 
   @ViewChild('numeroEmpleadoAdd') numeroEmpleadoAdd: MasInputTextComponent;
 

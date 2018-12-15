@@ -17,7 +17,7 @@ export class AltaEmpleadoComponent implements OnInit {
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
   @ViewChild('tipoNominaTypeDDL') tipoNominaTypeDDL: InputSelectComponent;
   empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '', 0, 0, 0, 0, 0, '');
-  empleado: Empleado = new Empleado(0, '', 0, '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '');
+  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
 
 
   columnDefs = [

@@ -23,6 +23,9 @@ import { BajaUsuariosComponent } from './Usuarios/baja-usuarios/baja-usuarios.co
 import { AsignacionPlasticoComponent } from './Plasticos/asignacion-plastico/asignacion-plastico.component';
 import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plastico/cambio-estatus-plastico.component';
 import { AdminGuard } from '../services/guards/admin.guard';
+import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
+import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
+import { RolesGuard } from '../services/guards/roles.guard';
 
 
 const pagesRoutes: Routes = [
@@ -36,22 +39,37 @@ const pagesRoutes: Routes = [
         path: 'empresa',
         component: EmpresaComponent,
         data: { titulo: 'Empresas' },
-        canActivate: [AdminGuard],
+        canActivate: [RolesGuard],
     },
-    { path: 'contacto', component: ContactoComponent, data: { titulo: 'Contacto' } },
-    { path: 'politicas', component: PoliticasComponent, data: { titulo: 'Politicas' } },
-    { path: 'baja-empresa', component: BajaEmpresaComponent, data: { titulo: 'Baja-Empresa' } },
-    { path: 'consulta-empresa', component: ConsultaEmpresaComponent, data: { titulo: 'Consulta-Empresa' } },
-    { path: 'alta-empleado', component: AltaEmpleadoComponent, data: { titulo: 'Alta-Empleado' } },
-    { path: 'baja-empleado', component: BajaEmpleadoComponent, data: { titulo: 'Baja-Empleado' } },
-    { path: 'consulta-empleado', component: ConsultaEmpleadoComponent, data: { titulo: 'Consulta-Empleado' } },
-    { path: 'modificacion-empleado', component: ModificacionEmpleadoComponent, data: { titulo: 'Modificacion-Empleado' } },
-    { path: 'alta-plastico', component: AltaPlasticoComponent, data: { titulo: 'Alta-Plastico' } },
-    { path: 'asignacion-plastico', component: AsignacionPlasticoComponent, data: { titulo: 'Asignacion-Plastico' } },
-    { path: 'cambio-estatus-plastico', component: CambioEstatusPlasticoComponent, data: { titulo: 'Cambio-Estatus-Plastico' } },
-    { path: 'consulta-usuario', component: ConsultaUsuariosComponent, data: { titulo: 'Consulta-Usuario' } },
-    { path: 'baja-usuario', component: BajaUsuariosComponent, data: { titulo: 'Baja-Usuario' } },
-    { path: '', redirectTo: '/empresa', pathMatch: 'full' }
+    { path: 'baja-empresa', component: BajaEmpresaComponent, data: { titulo: 'Baja-Empresa' }, canActivate: [RolesGuard] },
+    { path: 'consulta-empresa', component: ConsultaEmpresaComponent, data: { titulo: 'Consulta-Empresa' }, canActivate: [RolesGuard] },
+    {
+        path: 'modificacion-empresa', component: ModificacionEmpresaComponent,
+        data: { titulo: 'Modificacion-Empleado' }, canActivate: [RolesGuard]
+    },
+    { path: 'alta-empleado', component: AltaEmpleadoComponent, data: { titulo: 'Alta-Empleado' }, canActivate: [RolesGuard] },
+    { path: 'baja-empleado', component: BajaEmpleadoComponent, data: { titulo: 'Baja-Empleado' }, canActivate: [RolesGuard] },
+    { path: 'consulta-empleado', component: ConsultaEmpleadoComponent, data: { titulo: 'Consulta-Empleado' }, canActivate: [RolesGuard] },
+    {
+        path: 'modificacion-empleado', component: ModificacionEmpleadoComponent,
+        data: { titulo: 'Modificacion-Empleado' }, canActivate: [RolesGuard]
+    },
+    { path: 'alta-plastico', component: AltaPlasticoComponent, data: { titulo: 'Alta-Plastico' }, canActivate: [RolesGuard] },
+    {
+        path: 'asignacion-plastico', component: AsignacionPlasticoComponent,
+        data: { titulo: 'Asignacion-Plastico' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'asignacion-masiva-plastico', component: AsignacionMasivaPlasticosComponent,
+        data: { titulo: 'Asignacion-Masiva-Plastico' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'cambio-estatus-plastico', component: CambioEstatusPlasticoComponent,
+        data: { titulo: 'Cambio-Estatus-Plastico' }, canActivate: [RolesGuard]
+    },
+    { path: 'consulta-usuario', component: ConsultaUsuariosComponent, data: { titulo: 'Consulta-Usuario' }, canActivate: [RolesGuard] },
+    { path: 'baja-usuario', component: BajaUsuariosComponent, data: { titulo: 'Baja-Usuario' }, canActivate: [RolesGuard] },
+    { path: '', redirectTo: '/empresa', pathMatch: 'full', canActivate: [RolesGuard] }
 ];
 
 

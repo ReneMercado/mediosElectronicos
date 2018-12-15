@@ -42,6 +42,8 @@ import { ConsultaUsuariosComponent } from './Usuarios/consulta-usuarios/consulta
 import { BajaUsuariosComponent } from './Usuarios/baja-usuarios/baja-usuarios.component';
 import { AsignacionPlasticoComponent } from './Plasticos/asignacion-plastico/asignacion-plastico.component';
 import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plastico/cambio-estatus-plastico.component';
+import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
+import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
 
 @NgModule({
     declarations: [
@@ -70,6 +72,8 @@ import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plast
         BajaUsuariosComponent,
         AsignacionPlasticoComponent,
         CambioEstatusPlasticoComponent,
+        AsignacionMasivaPlasticosComponent,
+        ModificacionEmpresaComponent,
     ],
     exports: [
         DashboardComponent

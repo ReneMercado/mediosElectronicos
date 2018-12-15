@@ -1,0 +1,11 @@
+.card:hover {
+    background-color: lightblue;
+}
+
+.card:hover .card-title {
+    color: white;
+}
+
+.card:hover .iconCard {
+    color: white;
+}

@@ -42,7 +42,7 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse navBarMenu" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto" *ngIf="isAdmin">
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Empresas</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown2">
@@ -56,7 +56,6 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdown2">
                         <li class="dropdown-item" routerLink="/consulta-empleado"><a>Consulta</a></li>
                         <li class="dropdown-item" routerLink="/alta-empleado"><a>Alta</a></li>
-                        <li class="dropdown-item" routerLink="/modificacion-empleado"><a>Modificación</a></li>
                         <li class="dropdown-item" routerLink="/baja-empleado"><a>Baja</a></li>
                     </ul>
                 </li>
@@ -64,7 +63,8 @@
                     <a class="nav-link dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plasticos</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown2">
                         <li class="dropdown-item" routerLink="/alta-plastico"><a>Alta</a></li>
-                        <li class="dropdown-item" routerLink="/asignacion-plastico"><a>Asignación</a></li>
+                        <li class="dropdown-item" routerLink="/asignacion-masiva-plastico"><a>Asignación</a></li>
+                        <li class="dropdown-item" routerLink="/asignacion-plastico"><a>Reasignación</a></li>
                         <li class="dropdown-item" routerLink="/cambio-estatus-plastico"><a>Cambio de Estatus</a></li>
                     </ul>
                 </li>

@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   // usuario: Usuario;
   ultimoAcceso = localStorage.getItem('FechaUltAcceso');
   userName = localStorage.getItem('userName');
+  isAdmin = +localStorage.getItem('Rol_Id') === 1 ? true : false;
 
   oldPass = '';
   newPass = '';

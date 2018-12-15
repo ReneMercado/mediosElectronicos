@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consulta-empleado',
@@ -24,16 +25,29 @@ export class ConsultaEmpleadoComponent implements OnInit {
   columnDefs = [
     { headerName: 'Empresa', field: 'Empresa' },
     { headerName: 'Nombre', field: 'Nombre' },
-    { headerName: 'Num. Tarjeta', field: 'Num. Tarjeta' },
+    { headerName: 'Num. Tarjeta', field: 'NumTarjeta' },
     { headerName: 'RFC', field: 'RFC' },
     { headerName: 'Estatus', field: 'Estatus' }
   ];
 
-  rowData = [];
+  rowData = [{
+    Id_Empleado: 1,
+    Empresa: 'Empresa',
+    Nombre: 'Empleado Nombre',
+    NumTarjeta: '1234567890',
+    RFC: 'MGAS24D3DGKF',
+    Estatus: 'Alta'
+  }];
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  test = ($event) => {
+    this.router.navigate(['/modificacion-empleado']);
   }
 
 }

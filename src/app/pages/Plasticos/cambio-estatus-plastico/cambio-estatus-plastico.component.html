@@ -84,7 +84,9 @@
     <div class="col-4">
         <app-input-select #estatusNuevoDDL (valueChanged)="tarjeta.TarjetaEstatus_Id = $event" title="Seleccionar Estatus" optionValue="Id_Estatus" valueShow="Nombre" label="Estatus de Tarjeta Nuevo"></app-input-select>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="motivoCambio = $event" label="Motivo de Cambio" [textInput]="motivoCambio" validate="alphanumeric"></app-mas-input-text>
+    </div>
 </div>
 
 <div class="row">

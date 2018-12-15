@@ -9,8 +9,11 @@ import { Tarjeta } from '../../../models/tarjeta.model';
 })
 export class AsignacionPlasticoComponent implements OnInit {
 
-  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
+  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
   tarjeta: Tarjeta = new Tarjeta(0, 0, '', '', '', '', 0, '', 0, 0, new Date(), 0, new Date());
+  tarjetaNueva: Tarjeta = new Tarjeta(0, 0, '', '', '', '', 0, '', 0, 0, new Date(), 0, new Date());
+  motivoCambio = '';
+
   constructor() { }
 
   ngOnInit() {

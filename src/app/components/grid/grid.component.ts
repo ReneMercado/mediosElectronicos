@@ -1,6 +1,7 @@
 import { Component, Input, Output, ViewChild, OnInit, EventEmitter, ElementRef } from '@angular/core';
 import { AgGridNg2 } from 'ag-grid-angular';
 import * as moment from 'moment';
+import { emit } from 'cluster';
 
 @Component({
   selector: 'app-grid',
@@ -10,6 +11,7 @@ import * as moment from 'moment';
 export class GridComponent implements OnInit {
 
   @ViewChild('agGrid') agGrid: AgGridNg2;
+  @Output() rowSelected: EventEmitter<string> = new EventEmitter();
 
   // localeText = {
   //   // for filter panel
@@ -131,6 +133,10 @@ export class GridComponent implements OnInit {
 
   dateFormatter(params) {
     return moment(params.value).format('DD/MM/YYYY');
+  }
+
+  onRowSelected($event) {
+    this.rowSelected.emit($event);
   }
 
   // showLoadingOverlay() {

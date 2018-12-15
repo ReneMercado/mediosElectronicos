@@ -11,7 +11,7 @@ export class AdminGuard implements CanActivate {
     ) { }
 
     canActivate() {
-        if (+localStorage. getItem('Rol_Id') === 4) {
+        if (+localStorage.getItem('Rol_Id') === 1) {
             return true;
         } else {
             console.log('Bloqueado por el ADMIN GUARD');
