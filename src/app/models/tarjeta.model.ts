@@ -14,6 +14,11 @@ export class Tarjeta {
         public FechaCreacion: Date,
         public UsuarioMod_Id: number,
         public FechaMod: Date,
+        public LimiteCredito: number,
+        public MontoSolicitado: number,
+        public TotalCompras: number,
+        public ImportePagar: number,
+        public DisponibleSolicitar: number
     ) { }
 
 }

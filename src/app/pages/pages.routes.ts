@@ -26,6 +26,11 @@ import { AdminGuard } from '../services/guards/admin.guard';
 import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
 import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
 import { RolesGuard } from '../services/guards/roles.guard';
+import { ActivacionPlasticoComponent } from './CallCenter/activacion-plastico/activacion-plastico.component';
+import { BloquearPlasticoComponent } from './CallCenter/bloquear-plastico/bloquear-plastico.component';
+import { AutenticacionComponent } from './CallCenter/autenticacion/autenticacion.component';
+import { ConsultaMovimientosComponent } from './CallCenter/consulta-movimientos/consulta-movimientos.component';
+import { CambioNipComponent } from './CallCenter/cambio-nip/cambio-nip.component';
 
 
 const pagesRoutes: Routes = [
@@ -69,6 +74,26 @@ const pagesRoutes: Routes = [
     },
     { path: 'consulta-usuario', component: ConsultaUsuariosComponent, data: { titulo: 'Consulta-Usuario' }, canActivate: [RolesGuard] },
     { path: 'baja-usuario', component: BajaUsuariosComponent, data: { titulo: 'Baja-Usuario' }, canActivate: [RolesGuard] },
+    {
+        path: 'autenticacion', component: AutenticacionComponent,
+        data: { titulo: 'Autenticacion' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'activacion-plastico', component: ActivacionPlasticoComponent,
+        data: { titulo: 'Activacion-Plastico' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'bloquear-plastico', component: BloquearPlasticoComponent,
+        data: { titulo: 'Bloquear-Plastico' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'consulta-movimientos', component: ConsultaMovimientosComponent,
+        data: { titulo: 'Consulta-Movimientos' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'cambio-nip', component: CambioNipComponent,
+        data: { titulo: 'Cambio-NIP' }, canActivate: [RolesGuard]
+    },
     { path: '', redirectTo: '/empresa', pathMatch: 'full', canActivate: [RolesGuard] }
 ];
 

@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-12">
+        <div class="Sec-subTitle text-center">Autenticación</div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+        <div class="Sec-subTitle">Datos Tarjeta</div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="tarjeta.NumTarjeta = $event" label="Numero de Tarjeta" [textInput]="tarjeta.NumTarjeta" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-6">
+        <app-input-select #empresaDDL (valueChanged)="$event" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]=""></app-input-select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
+        <div class="Sec-subTitle">Datos Personales</div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.PrimerNombre = $event" label="Primer Nombre" [textInput]="empleado.PrimerNombre" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.SegundoNombre = $event" label="Segundo Nombre" [textInput]="empleado.SegundoNombre" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.ApellidoPaterno = $event" label="Apellido Paterno" [textInput]="empleado.ApellidoPaterno" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.ApellidoMaterno = $event" label="Apellido Materno" [textInput]="empleado.ApellidoMaterno" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="date" maxlength="150" (cambioValor)="empleado.FechaNacimiento = $event" label="Fecha de Nacimiento" [textInput]="empleado.FechaNacimiento"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.RFC = $event" label="RFC" [textInput]="empleado.RFC" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.CURP = $event" label="CURP" [textInput]="empleado.CURP" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="onClickSiguiente()">
+      Siguiente
+    </button>
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="onClickCancelar()">
+      Cancelar
+    </button>
+    </div>
+</div>
+<br>

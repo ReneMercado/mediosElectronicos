@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,25 +10,22 @@ export class DashboardComponent implements OnInit {
 
   textName2: string;
   textName: string;
-  graficos: any = {
-    'grafico1': {
-      'labels': ['Conectados', 'Desconectados'],
-      'data': [24, 40],
-      'type': 'doughnut',
-      'leyenda': 'Agentes'
-    },
-    'grafico2': {
-      'labels': ['Pendientes', 'Realizadas'],
-      'data': [500, 2000],
-      'type': 'doughnut',
-      'leyenda': 'Visitas Realizadas'
-    }
-  };
 
-
-  constructor() { }
+  constructor(
+    public router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  onClickCard(needAuthPage, nextPage) {
+
+    if (needAuthPage) {
+      this.router.navigate(['/autenticacion'], { queryParams: { nextPage: nextPage } });
+    } else {
+      this.router.navigate([`${nextPage}`]);
+    }
+
   }
 
 }

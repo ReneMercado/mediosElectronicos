@@ -4,6 +4,7 @@ import { UsuarioService } from '../../services/service.index';
 import { Router } from '@angular/router';
 
 // import * as $AB from 'jquery';
+import { ROL_IDS } from '../../Enums';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
   // usuario: Usuario;
   ultimoAcceso = localStorage.getItem('FechaUltAcceso');
   userName = localStorage.getItem('userName');
-  isAdmin = +localStorage.getItem('Rol_Id') === 1 ? true : false;
+  isAdmin = +localStorage.getItem('Rol_Id') === ROL_IDS.AdminRol ? true : false;
 
   oldPass = '';
   newPass = '';

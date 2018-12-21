@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
 
 @Component({
   selector: 'app-consulta-empresa',
@@ -12,12 +13,12 @@ export class ConsultaEmpresaComponent implements OnInit {
     Id_Empresa: 0,
     Convenio: 0,
     NumEmpresa: 0,
-    Nombre: '',
-    RFC: '',
-    RazonSocial: '',
-    Estatus: 1,
-    Fec_IniCon: new Date('01/01/0001 12:00:00 a. m.'),
-    Fec_FinCon: new Date('01/01/0001 12:00:00 a. m.'),
+    Nombre: null,
+    RFC: null,
+    RazonSocial: null,
+    Estatus: null,
+    Fec_IniCon: new Date('1900/01/01').toDateString(),
+    Fec_FinCon: new Date('1900/01/01').toDateString(),
   };
 
   columnDefs = [
@@ -36,10 +37,12 @@ export class ConsultaEmpresaComponent implements OnInit {
   }];
 
   constructor(
-    public router: Router
+    public router: Router,
+    public _empresaService: EmpresaService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.rowData = (await this._empresaService.getEmpresas(this.filtros)).Empresas;
   }
 
   test = ($event) => {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../usuario/usuario.service';
+import { ROL_IDS } from '../../Enums';
 
 @Injectable({
   providedIn: 'root'
@@ -25,28 +26,25 @@ export class RolesGuard implements CanActivate {
 
   operadorRutas = [
     '/dashboard',
-    '',
-    ''
+    '/autenticacion',
+    '/activacion-plastico',
+    '/bloquear-plastico',
+    '/consulta-movimientos',
+    '/cambio-nip'
   ];
 
   supervisorRutas = ['', ''];
 
-  ROLS = {
-    AdminRol: { ID: 1 },
-    SupervisorCC: { ID: 2 },
-    OperadorCC: { ID: 3 },
-    Empleado: { ID: 4 },
-  };
-
   constructor(public _usuarioService: UsuarioService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log(state.url); // Ej. /baja-empleado
-    if (+localStorage.getItem('Rol_Id') === this.ROLS.AdminRol.ID && this.adminRutas.indexOf(state.url) > -1) {
+    let url = (state.url).split('?')[0];
+    console.log(url); // Ej. /baja-empleado
+    if (+localStorage.getItem('Rol_Id') === ROL_IDS.AdminRol && this.adminRutas.includes(url)) {
       return true;
-    } else if (+localStorage.getItem('Rol_Id') === this.ROLS.SupervisorCC.ID && this.supervisorRutas.indexOf(state.url) > -1) {
+    } else if (+localStorage.getItem('Rol_Id') === ROL_IDS.SupervisorCC && this.supervisorRutas.includes(url)) {
       return true;
-    } else if (+localStorage.getItem('Rol_Id') === this.ROLS.OperadorCC.ID && this.operadorRutas.indexOf(state.url) > -1) {
+    } else if (+localStorage.getItem('Rol_Id') === ROL_IDS.OperadorCC && this.operadorRutas.includes(url)) {
       return true;
     } else {
       console.log('Bloqueado por el Operador GUARD');

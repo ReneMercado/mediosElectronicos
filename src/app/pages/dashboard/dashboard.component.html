@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-3">
-        <div class="card">
+        <div class="card" (click)="onClickCard(false,'/activacion-plastico')">
             <div class="card-header">
                 <div class="row">
                     <div class="col-12">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-3">
-        <div class="card">
+        <div class="card" (click)="onClickCard(true,'/bloquear-plastico')">
             <div class="card-header">
                 <div class="row">
                     <div class="col-12">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="col-3">
-        <div class="card">
+        <div class="card" (click)="onClickCard(true,'/consulta-movimientos')">
             <div class="card-header">
                 <div class="row">
                     <div class="col-12">
@@ -63,7 +63,7 @@
     </div>
 
     <div class="col-3">
-        <div class="card">
+        <div class="card" (click)="onClickCard(true,'/cambio-nip')">
             <div class="card-header">
                 <div class="row">
                     <div class="col-12">

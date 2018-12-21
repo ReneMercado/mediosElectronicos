@@ -44,6 +44,11 @@ import { AsignacionPlasticoComponent } from './Plasticos/asignacion-plastico/asi
 import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plastico/cambio-estatus-plastico.component';
 import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
 import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
+import { ActivacionPlasticoComponent } from './CallCenter/activacion-plastico/activacion-plastico.component';
+import { BloquearPlasticoComponent } from './CallCenter/bloquear-plastico/bloquear-plastico.component';
+import { AutenticacionComponent } from './CallCenter/autenticacion/autenticacion.component';
+import { ConsultaMovimientosComponent } from './CallCenter/consulta-movimientos/consulta-movimientos.component';
+import { CambioNipComponent } from './CallCenter/cambio-nip/cambio-nip.component';
 
 @NgModule({
     declarations: [
@@ -74,6 +79,11 @@ import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/mo
         CambioEstatusPlasticoComponent,
         AsignacionMasivaPlasticosComponent,
         ModificacionEmpresaComponent,
+        ActivacionPlasticoComponent,
+        BloquearPlasticoComponent,
+        AutenticacionComponent,
+        ConsultaMovimientosComponent,
+        CambioNipComponent,
     ],
     exports: [
         DashboardComponent
