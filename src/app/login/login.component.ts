@@ -5,6 +5,7 @@ import { UsuarioService } from '../services/service.index';
 import 'rxjs/add/operator/catch';
 // import { UsuarioService } from '../services/service.index';
 // import { Usuario } from '../models/usuario.model';
+import { ROL_IDS } from '../Enums';
 
 declare const gapi: any;
 
@@ -54,7 +55,12 @@ export class LoginComponent implements OnInit {
       let logged = await this._usuarioService.loginUser(forma.value.userId, forma.value.password);
 
       if (logged) {
-        this.router.navigate(['/dashboard']);
+        if (ROL_IDS.AdminRol === +localStorage.getItem('Rol_Id')) {
+          this.router.navigate(['/consulta-empresa']);
+        } else if (ROL_IDS.OperadorCC === +localStorage.getItem('Rol_Id')
+          || ROL_IDS.SupervisorCC === +localStorage.getItem('Rol_Id')) {
+          this.router.navigate(['/dashboard']);
+        }
       } else {
         swal('Error', 'No se pudo iniciar sesión', 'error');
       }

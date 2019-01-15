@@ -10,7 +10,9 @@ export class AsignacionMasivaPlasticosComponent implements OnInit {
 
   cargaMasiva = '';
   showResultDiv = false;
-  empresa: Empresa = new Empresa(0, '', '', '', '', 0, '', '', '', '', '', 0, '', 0, '', '', '', '', '', 0, 0, 0, 0, 0, '');
+  empresa: Empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
+    0, 0, new Date(), 0, new Date());
   columnDefs = [
     { headerName: 'Empresa', field: 'Empresa' },
     { headerName: 'Empleado', field: 'Empleado' }

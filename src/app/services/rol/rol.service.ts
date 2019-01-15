@@ -22,7 +22,7 @@ export class RolService {
       const url = URL_SERVICIOS + '/Roles';
       return await this.http.get(url)
         .map((resp: any) => {
-          return resp;
+          return resp.data;
         }).toPromise();
     } catch (e) {
       throw e;

@@ -1,3 +1,4 @@
+export { MovimientosService } from './movimientos/movimientos.service';
 export { RolesGuard } from './guards/roles.guard';
 export { TipoVisitaService } from './tipo-visita/tipo-visita.service';
 export { VisitaService } from './visita/visita.service';

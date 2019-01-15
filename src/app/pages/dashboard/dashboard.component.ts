@@ -16,6 +16,28 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (localStorage.getItem('autEmpleado') && localStorage.getItem('autTarjeta')) {
+      swal('¿Desea hacer otro movimiento?', {
+        buttons: {
+          cancel: {
+            text: 'Terminar',
+            value: false,
+            visible: true
+          },
+          continuar: {
+            text: 'Continuar',
+            value: true,
+          }
+        },
+      }).then((value) => {
+        if (!value) {
+          localStorage.removeItem('autEmpleado');
+          localStorage.removeItem('autTarjeta');
+
+          swal('¡Sesión Terminada!');
+        }
+      });
+    }
   }
 
   onClickCard(needAuthPage, nextPage) {

@@ -20,7 +20,7 @@
             <form #filterForm="ngForm">
                 <div class="row">
                     <div class="col-3">
-                        <app-input-select #empresaDDL (valueChanged)="filtros.Id_Empresa = $event" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Nombre" label="Empresa" [inputSelect]="filtros.Empresa_Id"></app-input-select>
+                        <app-input-select #empresaDDL (valueChanged)="filtros.Id_Empresa = $event" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Nombre" label="Empresa" [inputSelect]="filtros.Id_Empresa"></app-input-select>
                     </div>
                     <div class="col-3">
                         <app-mas-input-text type="text" (cambioValor)="filtros.Convenio = $event" label="Convenio"></app-mas-input-text>
@@ -71,7 +71,7 @@
 <div class="row">
     <div class="col-12">
         <div style="width: 100%; height: 275px">
-            <app-grid #gridVisit (rowSelected)="test($event)" [rowData]="rowData" [columnDefs]="columnDefs"></app-grid>
+            <app-grid #gridVisit (rowSelected)="onNavigateEmpresa($event)" [rowData]="rowData" [columnDefs]="columnDefs"></app-grid>
         </div>
     </div>
 </div>

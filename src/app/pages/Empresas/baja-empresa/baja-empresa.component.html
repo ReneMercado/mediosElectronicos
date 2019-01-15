@@ -1,40 +1,40 @@
 <div class="row">
-  <div class="col-10">
-    <div class="Sec-subTitle">Baja Empresa</div>
-  </div>
+    <div class="col-10">
+        <div class="Sec-subTitle">Baja Empresa</div>
+    </div>
 </div>
 
 <div class="row">
-  <div class="col-3">
-    <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
-  </div>
-  <div class="col-4">
-    <app-mas-input-text #razonAdd type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
-  </div>
-  <div class="col-3">
-    <app-mas-input-text #rfcAdd type="text" maxlength="50" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RCF" validate="alphanumeric"></app-mas-input-text>
-  </div>
+    <div class="col-3">
+        <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChange($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Nombre" label="Empresa" [inputSelect]="empresa.Id_Empresa"></app-input-select>
+    </div>
+    <div class="col-6">
+        <app-mas-input-text [disabled]="true" type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-3">
+        <app-mas-input-text [disabled]="true" type="text" maxlength="50" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RFC" validate="alphanumericNoSpace"></app-mas-input-text>
+    </div>
 </div>
 
 <div class="row">
-  <div class="col-4">
-    <app-input-select #motivoAdd (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Motivo" optionValue="Id_Motivo" valueShow="Motivo" label="Motivo" [inputSelect]="selectValM"></app-input-select>
-  </div>
-  <div class="col-12">
-    <app-mas-input-text #otroAdd type="text" maxlength="50" (cambioValor)="empresa.Otro = $event" label="Otro" [textInput]="empresa.Otro" validate="alphanumeric"></app-mas-input-text>
-  </div>
+    <div class="col-4">
+        <app-input-select #motivoDDL (valueChanged)="onMotivoChange($event)" title="Seleccionar Motivo" optionValue="Id_Motivo" valueShow="Motivo" label="Motivo" [inputSelect]="selectValM"></app-input-select>
+    </div>
+    <div class="col-8">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.Otro = $event" label="Otro" [textInput]="empresa.Otro" validate="alphanumeric"></app-mas-input-text>
+    </div>
 </div>
 <div class="row">
-  <div class="col-8">
-  </div>
-  <div class="col-2" style="margin-top:3%">
-    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+    <div class="col-8">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="onUpdateEmpresa()">
       Guardar
     </button>
-  </div>
-  <div class="col-2" style="margin-top:3%">
-    <button class="blue-btn-icon btn-primary" type="button" (click)="Guardar()">
+    </div>
+    <div class="col-2" style="margin-top:3%">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="onCancelar()">
       Cancelar
     </button>
-  </div>
+    </div>
 </div>

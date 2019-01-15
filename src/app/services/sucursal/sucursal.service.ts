@@ -21,7 +21,7 @@ export class SucursalService {
       const url = URL_SERVICIOS + '/Sucursales';
       return await this.http.get(url)
         .map((resp: any) => {
-          return resp;
+          return resp.data || [];
         }).toPromise();
     } catch (e) {
       throw e;

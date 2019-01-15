@@ -27,7 +27,10 @@ export class AutenticacionComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
 
         this.nextPage = params.nextPage;
-        console.log(this.nextPage);
+
+        if (localStorage.getItem('autEmpleado') && localStorage.getItem('autTarjeta')) {
+          this.router.navigate([this.nextPage]);
+        }
       });
 
       this.empresaDDL.changeOptions((await this._empresaService.getEmpresas(null)).Empresas);
@@ -38,6 +41,9 @@ export class AutenticacionComponent implements OnInit {
 
   onClickSiguiente() {
     this.router.navigate([this.nextPage]);
+
+    localStorage.setItem('autEmpleado', JSON.stringify(this.empleado));
+    localStorage.setItem('autTarjeta', JSON.stringify(this.tarjeta));
   }
 
   onClickCancelar() {

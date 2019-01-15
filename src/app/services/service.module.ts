@@ -12,6 +12,7 @@ import {
     RolService,
     SucursalService,
     VisitaService,
+    MovimientosService,
     TipoVisitaService,
     ZonasService,
     AuthInterceptor
@@ -33,6 +34,7 @@ import {
         SucursalService,
         VisitaService,
         TipoVisitaService,
+        MovimientosService,
         ZonasService,
         LoaderService,
         // SharedService,

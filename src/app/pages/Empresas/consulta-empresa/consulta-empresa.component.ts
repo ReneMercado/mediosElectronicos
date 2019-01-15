@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 import { EmpresaService } from '../../../services/empresa/empresa.service';
+import { InputSelectComponent } from '../../../components/input-select/input-select.component';
 
 @Component({
   selector: 'app-consulta-empresa',
@@ -8,6 +9,8 @@ import { EmpresaService } from '../../../services/empresa/empresa.service';
   styles: []
 })
 export class ConsultaEmpresaComponent implements OnInit {
+
+  @ViewChild('empresaDDL') empresaDDL: InputSelectComponent;
 
   filtros = {
     Id_Empresa: 0,
@@ -23,18 +26,12 @@ export class ConsultaEmpresaComponent implements OnInit {
 
   columnDefs = [
     { headerName: 'Convenio', field: 'Convenio' },
-    { headerName: 'Empresa', field: 'Empresa' },
-    { headerName: 'Razon Social', field: 'RazonSocial' },
-    { headerName: 'Estatus', field: 'Estatus' }
+    { headerName: 'Empresa', field: 'Nombre', width: 400 },
+    { headerName: 'Razon Social', field: 'RazonSocial', width: 400 },
+    { headerName: 'Estatus', field: 'Estatus', width: 210 }
   ];
 
-  rowData = [{
-    Id_Empresa: 1,
-    Convenio: 'Convenio-1234-ab',
-    Empresa: 'EmpreaPruebas',
-    RazonSocial: 'RazonSocialPruebas',
-    Estatus: 'Alta'
-  }];
+  rowData = [];
 
   constructor(
     public router: Router,
@@ -42,11 +39,21 @@ export class ConsultaEmpresaComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
+    let empresas = (await this._empresaService.getEmpresas(this.filtros)).Empresas;
+    this.empresaDDL.changeOptions(empresas);
+
+    this.rowData = empresas;
+  }
+
+  async onFilter() {
     this.rowData = (await this._empresaService.getEmpresas(this.filtros)).Empresas;
   }
 
-  test = ($event) => {
-    this.router.navigate(['/modificacion-empresa']);
+  onNavigateEmpresa = ($event) => {
+    let navigationExtras: NavigationExtras = {
+      queryParams: $event.data
+    };
+    this.router.navigate(['/modificacion-empresa'], navigationExtras);
   }
 
 }

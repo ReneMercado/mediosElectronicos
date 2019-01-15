@@ -60,6 +60,35 @@
 <div class="row">
     <div class="col-12">
         <hr />
+        <div class="Sec-subTitle">Representante Legal</div>
+        <hr />
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.PrimerNombreRL = $event" label="Nombre" [textInput]="empresa.PrimerNombreRL" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.ApellidoPaternoRL = $event" label="Apellido Paterno" [textInput]="empresa.ApellidoPaternoRL" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.ApellidoMaternoRL = $event" label="Apellido Materno" [textInput]="empresa.ApellidoMaternoRL" validate="alphanumeric"></app-mas-input-text>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.RFCRL = $event" label="RFC" [textInput]="empresa.RFCRL" validate="alphanumeric"></app-mas-input-text>
+    </div>
+    <div class="col-4">
+        <app-mas-input-text type="date" (cambioValor)="empresa.FechaNacimientoRL = $event" label="Fecha de Nacimiento" [textInput]="empresa.FechaNacimientoRL"></app-mas-input-text>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <hr />
         <div class="Sec-subTitle">Contacto</div>
         <hr />
     </div>
@@ -68,32 +97,32 @@
 
 <div class="row">
     <div class="col-4">
-        <app-mas-input-text #nombreAdd type="text" maxlength="50" (cambioValor)="contacto.Nombre = $event" label="Nombre" [textInput]="contacto.Nombre" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #nombreAdd type="text" maxlength="50" (cambioValor)="empresa.PrimerNombreRep = $event" label="Nombre" [textInput]="empresa.PrimerNombreRep" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-mas-input-text #paternoAdd type="text" maxlength="50" (cambioValor)="contacto.ApellidoPaterno = $event" label="Apellido Paterno" [textInput]="contacto.ApellidoPaterno" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #paternoAdd type="text" maxlength="50" (cambioValor)="empresa.ApellidoMaternoRep = $event" label="Apellido Paterno" [textInput]="empresa.ApellidoMaternoRep" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-mas-input-text #maternoAdd type="text" maxlength="50" (cambioValor)="contacto.ApellidoMaterno = $event" label="Apellido Materno" [textInput]="contacto.ApellidoMaterno" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #maternoAdd type="text" maxlength="50" (cambioValor)="empresa.ApellidoMaternoRep = $event" label="Apellido Materno" [textInput]="empresa.ApellidoMaternoRep" validate="alphanumeric"></app-mas-input-text>
     </div>
 </div>
 <div class="row">
     <div class="col-4">
-        <app-mas-input-text #puestoAdd type="text" maxlength="50" (cambioValor)="contacto.Puesto = $event" label="Puesto" [textInput]="contacto.Puesto" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #puestoAdd type="text" maxlength="50" (cambioValor)="empresa.PuestoRep = $event" label="Puesto" [textInput]="empresa.PuestoRep" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-2">
-        <app-mas-input-text #extAdd type="text" maxlength="50" (cambioValor)="contacto.Extension = $event" label="Ext." [textInput]="contacto.Extension" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #extAdd type="text" maxlength="50" (cambioValor)="empresa.ExtRep = $event" label="Ext." [textInput]="empresa.ExtRep" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-mas-input-text #correoAdd type="text" maxlength="50" (cambioValor)="contacto.Correo = $event" label="Correo" [textInput]="contacto.Correo" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #correoAdd type="text" maxlength="50" (cambioValor)="empresa.CorreoRep = $event" label="Correo" [textInput]="empresa.CorreoRep" validate="alphanumeric"></app-mas-input-text>
     </div>
 </div>
 <div class="row">
     <div class="col-4">
-        <app-mas-input-text #telefonoOficinaAdd type="text" maxlength="50" (cambioValor)="contacto.TelefonoOficina = $event" label="Telefono Oficina" [textInput]="contacto.TelefonoOficina" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #telefonoOficinaAdd type="text" maxlength="50" (cambioValor)="empresa.TelRep = $event" label="Telefono Oficina" [textInput]="empresa.TelRep" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-mas-input-text #telefonoCelularAdd type="text" maxlength="50" (cambioValor)="contacto.TelefonoCelular = $event" label="Telefono Celular" [textInput]="contacto.TelefonoCelular" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #telefonoCelularAdd type="text" maxlength="50" (cambioValor)="empresa.CelRep = $event" label="Telefono Celular" [textInput]="empresa.CelRep" validate="alphanumeric"></app-mas-input-text>
     </div>
 </div>
 

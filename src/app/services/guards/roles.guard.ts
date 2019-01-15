@@ -11,6 +11,7 @@ export class RolesGuard implements CanActivate {
 
   adminRutas = [
     '/consulta-empresa',
+    '/modificacion-empresa',
     '/empresa',
     '/baja-empresa',
     '/consulta-empleado',
@@ -30,7 +31,8 @@ export class RolesGuard implements CanActivate {
     '/activacion-plastico',
     '/bloquear-plastico',
     '/consulta-movimientos',
-    '/cambio-nip'
+    '/cambio-nip',
+    '/reposicion-plastico',
   ];
 
   supervisorRutas = ['', ''];

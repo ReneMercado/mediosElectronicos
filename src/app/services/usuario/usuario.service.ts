@@ -59,34 +59,6 @@ export class UsuarioService {
     }
   }
 
-  // getSyncronousUsers() {
-  //   let filtros = {
-
-  //   };
-  //   const url = URL_SERVICIOS + '/ConsultaUsuarios';
-  //   return this.http.post(url, filtros)
-  //     .map((resp: any) => {
-  //       return resp.Table;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       swal('Error', err.message, 'error');
-  //       return Observable.throw(err);
-  //     });
-  // }
-
-  // ejempli() {
-  // ------------------ Importar _usuarioService en constructor ---------------
-  // this._usuarioService.getSyncronousUsers().subscribe((resp: any) => {
-
-  //   if (resp.length === 0) {
-  //     console.log('No hay usuarios!');
-  //   }
-
-  //   this.usuarios = resp;
-  // });
-  // }
-
   async getUser(nombre: string) {
     try {
       this.loader.show();

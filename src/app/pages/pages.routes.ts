@@ -31,6 +31,7 @@ import { BloquearPlasticoComponent } from './CallCenter/bloquear-plastico/bloque
 import { AutenticacionComponent } from './CallCenter/autenticacion/autenticacion.component';
 import { ConsultaMovimientosComponent } from './CallCenter/consulta-movimientos/consulta-movimientos.component';
 import { CambioNipComponent } from './CallCenter/cambio-nip/cambio-nip.component';
+import { ReposicionPlasticoComponent } from './CallCenter/reposicion-plastico/reposicion-plastico.component';
 
 
 const pagesRoutes: Routes = [
@@ -93,6 +94,10 @@ const pagesRoutes: Routes = [
     {
         path: 'cambio-nip', component: CambioNipComponent,
         data: { titulo: 'Cambio-NIP' }, canActivate: [RolesGuard]
+    },
+    {
+        path: 'reposicion-plastico', component: ReposicionPlasticoComponent,
+        data: { titulo: 'Reposicion-Plastico' }, canActivate: [RolesGuard]
     },
     { path: '', redirectTo: '/empresa', pathMatch: 'full', canActivate: [RolesGuard] }
 ];

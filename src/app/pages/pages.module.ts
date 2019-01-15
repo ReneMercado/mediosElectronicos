@@ -49,6 +49,7 @@ import { BloquearPlasticoComponent } from './CallCenter/bloquear-plastico/bloque
 import { AutenticacionComponent } from './CallCenter/autenticacion/autenticacion.component';
 import { ConsultaMovimientosComponent } from './CallCenter/consulta-movimientos/consulta-movimientos.component';
 import { CambioNipComponent } from './CallCenter/cambio-nip/cambio-nip.component';
+import { ReposicionPlasticoComponent } from './CallCenter/reposicion-plastico/reposicion-plastico.component';
 
 @NgModule({
     declarations: [
@@ -84,6 +85,7 @@ import { CambioNipComponent } from './CallCenter/cambio-nip/cambio-nip.component
         AutenticacionComponent,
         ConsultaMovimientosComponent,
         CambioNipComponent,
+        ReposicionPlasticoComponent,
     ],
     exports: [
         DashboardComponent

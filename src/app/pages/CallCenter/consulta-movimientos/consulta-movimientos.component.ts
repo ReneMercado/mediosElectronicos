@@ -12,9 +12,14 @@ import { EmpresaService } from '../../../services/empresa/empresa.service';
 })
 export class ConsultaMovimientosComponent implements OnInit {
 
+  @ViewChild('empresaDDL') empresaDDL: InputSelectComponent;
+
   empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
   tarjeta: Tarjeta = new Tarjeta(0, 0, '', '', '', '', 0, '', 0, 0, new Date(), 0, new Date(), 0, 0, 0, 0, 0);
-  @ViewChild('empresaDDL') empresaDDL: InputSelectComponent;
+  filtros = {
+    Fec_IniCon: new Date('01/01/0001 12:00:00 a. m.'),
+    Fec_FinCon: new Date('01/01/0001 12:00:00 a. m.'),
+  };
 
   columnDefs = [
     { headerName: 'Fecha', field: 'Fecha' },
@@ -46,6 +51,10 @@ export class ConsultaMovimientosComponent implements OnInit {
     } catch (e) {
       swal('Error', e.Err_Mensaje || e.message, 'error');
     }
+  }
+
+  onFilter() {
+
   }
 
   onClickAceptar() {
