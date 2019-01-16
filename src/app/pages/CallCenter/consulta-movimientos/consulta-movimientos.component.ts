@@ -14,7 +14,8 @@ export class ConsultaMovimientosComponent implements OnInit {
 
   @ViewChild('empresaDDL') empresaDDL: InputSelectComponent;
 
-  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
+  empleado: Empleado = new Empleado(0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '');
   tarjeta: Tarjeta = new Tarjeta(0, 0, '', '', '', '', 0, '', 0, 0, new Date(), 0, new Date(), 0, 0, 0, 0, 0);
   filtros = {
     Fec_IniCon: new Date('01/01/0001 12:00:00 a. m.'),

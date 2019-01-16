@@ -43,6 +43,7 @@ export class Empresa {
     public FechaCreacion: Date,
     public UsuarioMod_Id: number,
     public FechaMod: Date,
+    public MotivoBajaEmpresa_Id: number
   ) { }
 
 }

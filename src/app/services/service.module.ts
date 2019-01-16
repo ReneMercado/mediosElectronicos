@@ -11,10 +11,8 @@ import {
     RolesGuard,
     RolService,
     SucursalService,
-    VisitaService,
     MovimientosService,
-    TipoVisitaService,
-    ZonasService,
+    PlasticoService,
     AuthInterceptor
 } from './service.index';
 
@@ -32,10 +30,8 @@ import {
         RolesGuard,
         RolService,
         SucursalService,
-        VisitaService,
-        TipoVisitaService,
         MovimientosService,
-        ZonasService,
+        PlasticoService,
         LoaderService,
         // SharedService,
         // SubirArchivoService,

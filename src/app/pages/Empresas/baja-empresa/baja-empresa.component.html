@@ -18,7 +18,7 @@
 
 <div class="row">
     <div class="col-4">
-        <app-input-select #motivoDDL (valueChanged)="onMotivoChange($event)" title="Seleccionar Motivo" optionValue="Id_Motivo" valueShow="Motivo" label="Motivo" [inputSelect]="selectValM"></app-input-select>
+        <app-input-select #motivoDDL (valueChanged)="empresa.MotivoBajaEmpresa_Id = $event" title="Seleccionar Motivo" optionValue="Id_MotivoBajaEmpresa" valueShow="Motivo" label="Motivo" [inputSelect]="empresa.MotivoBajaEmpresa_Id"></app-input-select>
     </div>
     <div class="col-8">
         <app-mas-input-text type="text" maxlength="50" (cambioValor)="empresa.Otro = $event" label="Otro" [textInput]="empresa.Otro" validate="alphanumeric"></app-mas-input-text>

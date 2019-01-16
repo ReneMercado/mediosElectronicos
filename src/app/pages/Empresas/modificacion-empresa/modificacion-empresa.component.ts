@@ -15,7 +15,7 @@ export class ModificacionEmpresaComponent implements OnInit {
   contacto: Contacto = new Contacto(0, '', '', '', '', '', '', '', '', '', 0);
   empresa: Empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
-    0, 0, new Date(), 0, new Date());
+    0, 0, new Date(), 0, new Date(), 0);
   selectValE = null;
   selectValM = null;
   selectValC = null;

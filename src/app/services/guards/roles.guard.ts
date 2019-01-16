@@ -16,6 +16,7 @@ export class RolesGuard implements CanActivate {
     '/baja-empresa',
     '/consulta-empleado',
     '/alta-empleado',
+    '/modificacion-empleado',
     '/baja-empleado',
     '/alta-plastico',
     '/asignacion-masiva-plastico',

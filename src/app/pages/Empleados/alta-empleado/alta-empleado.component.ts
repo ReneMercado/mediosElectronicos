@@ -5,6 +5,10 @@ import { InputSelectComponent } from '../../../components/input-select/input-sel
 import { NgForm } from '@angular/forms';
 import { Empresa } from '../../../models/empresa';
 import { Empleado } from '../../../models/empleado';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
+import { EmpleadoService } from '../../../services/empleado/empleado.service';
+import { CargaMasiva } from '../../../models/cargaMasiva.model';
+import { InputFileComponent } from '../../../components/input-file/input-file.component';
 
 
 @Component({
@@ -15,29 +19,58 @@ import { Empleado } from '../../../models/empleado';
 export class AltaEmpleadoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
-  @ViewChild('tipoNominaTypeDDL') tipoNominaTypeDDL: InputSelectComponent;
+  @ViewChild('inputFile') inputFile: InputFileComponent;
   empresa: Empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
-    0, 0, new Date(), 0, new Date());
-  empleado: Empleado = new Empleado(0, '', '', 0, '', '', '', '', '', '', '', '', '', '', 0, '', 0, '', 0, '', '', '', '', '', '', '', 0, 0, '', '', 0, 0, '', '', '', '', '', '', '');
+    0, 0, new Date(), 0, new Date(), 0);
+  empleado: Empleado = new Empleado(0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, '');
+  cargaMasiva = new CargaMasiva(0, '', 0);
 
 
   columnDefs = [
-    { headerName: 'Empresa', field: 'Empresa' },
-    { headerName: 'Empleado', field: 'Empleado' }
+    { headerName: 'RFC', field: 'RFC' },
+    { headerName: 'Primer Nombre', field: 'PrimerNombre' },
+    { headerName: 'Segundo Nombre', field: 'SegundoNombre' },
+    { headerName: 'Apellido Paterno', field: 'ApellidoPaterno' },
+    { headerName: 'Apellido Materno', field: 'ApellidoMaterno' }
   ];
   rowData = [];
+  listaErrores = [];
+  correctos = 0;
+  fallidos = 0;
 
   showResultDiv = false;
-  constructor() { }
+  constructor(
+    public _empleadoService: EmpleadoService,
+    public _empresaService: EmpresaService) { }
 
-  ngOnInit() {
-    // this.empresaAddDDL.changeOptions([{}]);
-    // this.tipoNominaTypeDDL.changeOptions([{}]);
+  async ngOnInit() {
+    let empresas = (await this._empresaService.getEmpresas(null)).Empresas;
+    this.empresaAddDDL.changeOptions(empresas);
   }
 
-  guardarEmpleados() {
-    this.showResultDiv = true;
+  async onEmpresaChange(Id_Empresa) {
+    this.cargaMasiva.Empresa_Id = Id_Empresa;
+    this.empresa = (await this._empresaService.getEmpresa(Id_Empresa)).Empresas[0] || {};
+  }
+
+  async guardarEmpleados() {
+    try {
+
+      if (!this.empresaAddDDL.valid() || this.cargaMasiva.Contenido.trim() === '') {
+        swal('Campos Requeridos', 'Favor de llenar los campos correctamente', 'error');
+        return false;
+      }
+
+      let resp = await this._empleadoService.crearEmpleadosMasiva(this.cargaMasiva);
+      this.listaErrores = resp.ListaErroresEmpleados;
+      this.correctos = resp.Correctos;
+      this.fallidos = resp.Fallidos;
+      this.showResultDiv = true;
+    } catch (e) {
+      swal('Error', e.Err_Mensaje || e.message, 'error');
+    }
   }
 
 }

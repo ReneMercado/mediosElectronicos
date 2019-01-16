@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="col-4">
-        <app-input-select #empresaAddDDL (valueChanged)="onEmpresaChanged($event)" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Empresa" label="Empresa" [inputSelect]="selectValE"></app-input-select>
+        <app-input-select #empresaDDL (valueChanged)="empleado.Empresa_Id = $event" title="Seleccionar Empresa" optionValue="Id_Empresa" valueShow="Nombre" label="Empresa" [inputSelect]="empleado.Empresa_Id"></app-input-select>
     </div>
     <div class="col-4"></div>
     <div class="col-4"></div>
@@ -69,22 +69,22 @@
 
 <div class="row">
     <div class="col-4">
-        <app-input-select #coloniaDDL (valueChanged)="empleado.Id_Colonia = $event" title="Seleccionar Colonia" optionValue="Id_Colonia" valueShow="Nombre" label="Colonia"></app-input-select>
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empleado.Estado = $event" label="Estado" [textInput]="empleado.Estado" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-input-select #municipioDDL (valueChanged)="empleado.Id_Municipio = $event" title="Seleccionar Municipio" optionValue="Id_Municipio" valueShow="Nombre" label="Municipio"></app-input-select>
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empleado.Municipio = $event" label="Municipio" [textInput]="empleado.Municipio" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-input-select #estadoDDL (valueChanged)="empleado.Id_Estado = $event" title="Seleccionar Estado" optionValue="Id_Estado" valueShow="Nombre" label="Estado"></app-input-select>
+        <app-mas-input-text type="text" maxlength="50" (cambioValor)="empleado.Colonia = $event" label="Colonia" [textInput]="empleado.Colonia" validate="alphanumeric"></app-mas-input-text>
     </div>
 </div>
 
 <div class="row">
     <div class="col-3">
-        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.TelefonoFijo = $event" label="Telefono Fijo" [textInput]="empleado.TelefonoFijo" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.Telefono = $event" label="Telefono Fijo" [textInput]="empleado.Telefono" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-3">
-        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.TelefonoCelular = $event" label="TelefonoC elular" [textInput]="empleado.TelefonoCelular" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text type="text" maxlength="150" (cambioValor)="empleado.Celular = $event" label="TelefonoC elular" [textInput]="empleado.Celular" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-6"></div>
 </div>

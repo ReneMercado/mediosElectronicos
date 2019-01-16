@@ -28,7 +28,7 @@ export class ConsultaEmpresaComponent implements OnInit {
     { headerName: 'Convenio', field: 'Convenio' },
     { headerName: 'Empresa', field: 'Nombre', width: 400 },
     { headerName: 'Razon Social', field: 'RazonSocial', width: 400 },
-    { headerName: 'Estatus', field: 'Estatus', width: 210 }
+    { headerName: 'Estatus', field: 'Estatus', width: 210, cellRenderer: this.EstatusRenderer.bind(this) }
   ];
 
   rowData = [];
@@ -43,6 +43,16 @@ export class ConsultaEmpresaComponent implements OnInit {
     this.empresaDDL.changeOptions(empresas);
 
     this.rowData = empresas;
+  }
+
+  EstatusRenderer(params) {
+    if (params.node.data.Estatus === 'A') {
+      return 'Alta';
+    } else if (params.node.data.Estatus === 'B') {
+      return 'Baja';
+    }
+
+    return params.node.data.Estatus;
   }
 
   async onFilter() {

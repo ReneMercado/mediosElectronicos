@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { InputSelectComponent } from '../../../components/input-select/input-select.component';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
+import { PlasticoService } from '../../../services/plastico/plastico.service';
+import { CargaMasiva } from '../../../models/cargaMasiva.model';
+import { Empresa } from '../../../models/empresa';
 
 @Component({
   selector: 'app-alta-plastico',
@@ -10,29 +14,52 @@ export class AltaPlasticoComponent implements OnInit {
 
   @ViewChild('empresaAddDDL') empresaAddDDL: InputSelectComponent;
 
-  params = {
-    Empresa_Id: 0,
-    RazonSocial: '',
-    RFC: ''
-  };
+  empresa: Empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+  '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
+  0, 0, new Date(), 0, new Date(), 0);
 
   columnDefs = [
     { headerName: 'Numero de Plastico', field: 'Numero de Plastico' },
     { headerName: 'Producto', field: 'Producto' }
   ];
+  cargaMasiva = new CargaMasiva(0, '', 0);
 
   rowData = [];
-
+  listaErrores = [];
+  correctos = 0;
+  fallidos = 0;
   showResultDiv = false;
 
-  constructor() { }
+  constructor(
+    public _plasticoService: PlasticoService,
+    public _empresaService: EmpresaService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    let empresas = (await this._empresaService.getEmpresas(null)).Empresas;
+    this.empresaAddDDL.changeOptions(empresas);
   }
 
+  async onEmpresaChange(Id_Empresa) {
+    this.cargaMasiva.Empresa_Id = Id_Empresa;
+    this.empresa = (await this._empresaService.getEmpresa(Id_Empresa)).Empresas[0] || {};
+  }
 
-  guardarPlasticos() {
-    this.showResultDiv = true;
+  async guardarPlasticos() {
+    try {
+
+      if (!this.empresaAddDDL.valid() || this.cargaMasiva.Contenido.trim() === '') {
+        swal('Campos Requeridos', 'Favor de llenar los campos correctamente', 'error');
+        return false;
+      }
+
+      let resp = await this._plasticoService.crearPlasticosMasiva(this.cargaMasiva);
+      this.listaErrores = resp.ListaErroresEmpleados;
+      this.correctos = resp.Correctos;
+      this.fallidos = resp.Fallidos;
+      this.showResultDiv = true;
+    } catch (e) {
+      swal('Error', e.Err_Mensaje || e.message, 'error');
+    }
   }
 
 }

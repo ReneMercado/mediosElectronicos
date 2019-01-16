@@ -18,7 +18,7 @@ export class BajaEmpresaComponent implements OnInit {
   @ViewChild('motivoDDL') motivoDDL: InputSelectComponent;
   empresa: Empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
-    0, 0, new Date(), 0, new Date());
+    0, 0, new Date(), 0, new Date(), 0);
 
   constructor(
     public _empresaService: EmpresaService,
@@ -34,13 +34,18 @@ export class BajaEmpresaComponent implements OnInit {
     this.empresa = (await this._empresaService.getEmpresa(Id_Empresa)).Empresas[0] || {};
   }
 
-  onMotivoChange(Id_Motivo) {
-    console.log(Id_Motivo);
-  }
-
   async onUpdateEmpresa() {
     try {
+      this.empresa.Estatus = 'B';
       let resp = await this._empresaService.updateEmpresa(this.empresa, 1);
+      if (resp.Exito === 1) {
+        swal('Exito', 'Registro Actualizado', 'success');
+        this.empresaAddDDL.setOption(0);
+        this.motivoDDL.setOption(0);
+        this.empresa = new Empresa('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+          '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0,
+          0, 0, new Date(), 0, new Date(), 0);
+      }
     } catch (e) {
       swal('Error', e.Err_Mensaje || e.message, 'error');
     }
