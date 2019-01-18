@@ -63,7 +63,7 @@ export class EmpleadoService {
       const url = URL_SERVICIOS + '/ConsultaEmpleado';
       return await this.http.get(url, {
         params: {
-          'Id_Empleado': Id_Empleado
+          'Id_Empleado': Id_Empleado,
         }
       })
         .map((resp: any) => {

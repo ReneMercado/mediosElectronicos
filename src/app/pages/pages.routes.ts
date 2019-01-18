@@ -23,7 +23,6 @@ import { BajaUsuariosComponent } from './Usuarios/baja-usuarios/baja-usuarios.co
 import { AsignacionPlasticoComponent } from './Plasticos/asignacion-plastico/asignacion-plastico.component';
 import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plastico/cambio-estatus-plastico.component';
 import { AdminGuard } from '../services/guards/admin.guard';
-import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
 import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
 import { RolesGuard } from '../services/guards/roles.guard';
 import { ActivacionPlasticoComponent } from './CallCenter/activacion-plastico/activacion-plastico.component';
@@ -64,10 +63,6 @@ const pagesRoutes: Routes = [
     {
         path: 'asignacion-plastico', component: AsignacionPlasticoComponent,
         data: { titulo: 'Asignacion-Plastico' }, canActivate: [RolesGuard]
-    },
-    {
-        path: 'asignacion-masiva-plastico', component: AsignacionMasivaPlasticosComponent,
-        data: { titulo: 'Asignacion-Masiva-Plastico' }, canActivate: [RolesGuard]
     },
     {
         path: 'cambio-estatus-plastico', component: CambioEstatusPlasticoComponent,

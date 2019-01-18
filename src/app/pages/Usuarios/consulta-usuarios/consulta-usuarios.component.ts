@@ -30,7 +30,8 @@ export class ConsultaUsuariosComponent implements OnInit {
     @ViewChild('aliasAdd') aliasAdd: MasInputTextComponent;
 
     usuarios: Usuario[] = [];
-    usuario: Usuario = new Usuario('', 0, 0, '', 0, new Date(), new Date(), new Date(), 0, '', '', '', '', 0, '', '', '', '');
+    usuario: Usuario = new Usuario('', 0, 0, '', 0, new Date(), new Date(), new Date(), 0, '', '',
+        '', '', 0, '', '', '', '', '');
 
     selectedRol: string = '';
 
@@ -99,7 +100,8 @@ export class ConsultaUsuariosComponent implements OnInit {
     }
 
     onAddModalOpen() {
-        this.usuario = new Usuario('', 0, 0, '', 0, new Date(), new Date(), new Date(), 0, '', '', '', '', 0, '', '', '', '');
+        this.usuario = new Usuario('', 0, 0, '', 0, new Date(), new Date(), new Date(), 0, '', '',
+            '', '', 0, '', '', '', '', '');
 
         this.sucAddDDL.setOption(0);
         this.rolAddDDL.setOption(0);

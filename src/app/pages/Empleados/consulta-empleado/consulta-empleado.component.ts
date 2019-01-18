@@ -36,14 +36,7 @@ export class ConsultaEmpleadoComponent implements OnInit {
     { headerName: 'Estatus', field: 'Estatus', cellRenderer: this.EstatusRenderer.bind(this) }
   ];
 
-  rowData = [{
-    Id_Empleado: 1,
-    Empresa: 'Empresa',
-    Nombre: 'Empleado Nombre',
-    NumTarjeta: '1234567890',
-    RFC: 'MGAS24D3DGKF',
-    Estatus: 'Alta'
-  }];
+  rowData = [];
 
   constructor(
     public router: Router,

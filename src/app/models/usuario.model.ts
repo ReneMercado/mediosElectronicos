@@ -18,7 +18,8 @@ export class Usuario {
         public Sucursal: string,
         public Sucursal_Id: string,
         public TipInactivo: string,
-        public TipoInactivoDescripcion: string
+        public TipoInactivoDescripcion: string,
+        public EstatusDescripcion: string
         ) { }
 
 }

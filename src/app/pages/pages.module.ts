@@ -42,7 +42,6 @@ import { ConsultaUsuariosComponent } from './Usuarios/consulta-usuarios/consulta
 import { BajaUsuariosComponent } from './Usuarios/baja-usuarios/baja-usuarios.component';
 import { AsignacionPlasticoComponent } from './Plasticos/asignacion-plastico/asignacion-plastico.component';
 import { CambioEstatusPlasticoComponent } from './Plasticos/cambio-estatus-plastico/cambio-estatus-plastico.component';
-import { AsignacionMasivaPlasticosComponent } from './Plasticos/asignacion-masiva-plasticos/asignacion-masiva-plasticos.component';
 import { ModificacionEmpresaComponent } from './Empresas/modificacion-empresa/modificacion-empresa.component';
 import { ActivacionPlasticoComponent } from './CallCenter/activacion-plastico/activacion-plastico.component';
 import { BloquearPlasticoComponent } from './CallCenter/bloquear-plastico/bloquear-plastico.component';
@@ -78,7 +77,6 @@ import { ReposicionPlasticoComponent } from './CallCenter/reposicion-plastico/re
         BajaUsuariosComponent,
         AsignacionPlasticoComponent,
         CambioEstatusPlasticoComponent,
-        AsignacionMasivaPlasticosComponent,
         ModificacionEmpresaComponent,
         ActivacionPlasticoComponent,
         BloquearPlasticoComponent,

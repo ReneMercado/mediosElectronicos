@@ -19,8 +19,8 @@ export class AltaPlasticoComponent implements OnInit {
   0, 0, new Date(), 0, new Date(), 0);
 
   columnDefs = [
-    { headerName: 'Numero de Plastico', field: 'Numero de Plastico' },
-    { headerName: 'Producto', field: 'Producto' }
+    { headerName: 'Numero de Plastico', field: 'NumTarjeta' },
+    { headerName: 'Producto', field: 'Producto_Id' }
   ];
   cargaMasiva = new CargaMasiva(0, '', 0);
 
@@ -53,7 +53,7 @@ export class AltaPlasticoComponent implements OnInit {
       }
 
       let resp = await this._plasticoService.crearPlasticosMasiva(this.cargaMasiva);
-      this.listaErrores = resp.ListaErroresEmpleados;
+      this.listaErrores = resp.ListaErroresTarjeta;
       this.correctos = resp.Correctos;
       this.fallidos = resp.Fallidos;
       this.showResultDiv = true;

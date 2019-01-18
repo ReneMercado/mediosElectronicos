@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.Estatus" (cambioValor)="usuario.Estatus = $event" label="Estatus"></app-mas-input-text>
+                <app-mas-input-text type="text" [disabled]="true" [textInput]="usuario.EstatusDescripcion" (cambioValor)="usuario.Estatus = $event" label="Estatus"></app-mas-input-text>
             </div>
             <div class="col-6">
                 <app-input-select #tipoInactivoDLL [disabled]="true" (valueChanged)="usuario.TipInactivo = $event" title="Seleccionar Motivo de Bloqueo" optionValue="Id_TipoInactivo" valueShow="Descripcion" label="Motivo de Bloqueo" [inputSelect]="usuario.TipInactivo"></app-input-select>
@@ -48,12 +48,12 @@
 <div class="row">
     <div class="col-8"></div>
     <div class="col-2">
-        <button class="blue-btn-icon btn-primary" type="button">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="desbloquearUsuario()">
         <i class="fas fa-user"></i>  Desbloquear
     </button>
     </div>
     <div class="col-2">
-        <button class="blue-btn-icon btn-primary" type="button">
+        <button class="blue-btn-icon btn-primary" type="button" (click)="bloquearUsuario()">
         <i class="fas fa-user-slash"></i>  Bloquear
     </button>
     </div>

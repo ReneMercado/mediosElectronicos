@@ -22,6 +22,7 @@ export class MasInputTextComponent implements OnInit {
   // Evento emitido al cambiar el valor del input
   // Se iguala la variable del modelo de la pantalla al retorno que se emite
   @Output() cambioValor: EventEmitter<string> = new EventEmitter();
+  @Output() blur: EventEmitter<string> = new EventEmitter();
 
   validField = true;
   validatorMessage = '';
@@ -131,6 +132,7 @@ export class MasInputTextComponent implements OnInit {
     this.textInput = this.validateCaseSensitive(this.textInput);
     this.inputMAS.nativeElement.value = this.textInput;
     this.cambioValor.emit(this.textInput);
+    this.blur.emit(this.textInput);
   }
 
   valid() {
