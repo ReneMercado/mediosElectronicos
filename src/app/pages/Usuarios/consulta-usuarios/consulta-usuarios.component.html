@@ -14,7 +14,7 @@
                             <app-mas-input-text #nombreEdit [disabled]='true' type="text" maxlength="40" (cambioValor)="usuario.Nombre = $event" label="Usuario" [textInput]="usuario.Nombre" validate="alphanumericNoSpace"></app-mas-input-text>
                         </div>
                         <div class="col-6">
-                            <app-input-select #sucEditDDL (valueChanged)="usuario.Sucursal_Id = $event" title="Seleccionar Sucursal" optionValue="Id_Sucursal" valueShow="NombreSucursal" label="Sucursal" [inputSelect]="usuario.Sucursal_Id"></app-input-select>
+                            <app-input-select #rolEditDDL (valueChanged)="usuario.Rol_Id = $event" title="Seleccionar Rol" optionValue="Id_Rol" valueShow="NombreRol" label="Rol" [inputSelect]="usuario.Rol_Id"></app-input-select>
                         </div>
                     </div>
                     <div class="row">
@@ -22,7 +22,6 @@
                             <app-mas-input-text #correoEdit type="email" maxlength="180" (cambioValor)="usuario.Correo = $event" label="Correo" [textInput]="usuario.Correo" validate="email"></app-mas-input-text>
                         </div>
                         <div class="col-6">
-                            <app-input-select #rolEditDDL (valueChanged)="usuario.Rol_Id = $event" title="Seleccionar Rol" optionValue="Id_Rol" valueShow="NombreRol" label="Rol" [inputSelect]="usuario.Rol_Id"></app-input-select>
                         </div>
                     </div>
                     <div class="row">
@@ -56,7 +55,7 @@
                             <app-mas-input-text #nombreAdd [required]="true" type="text" maxlength="40" (cambioValor)="usuario.Nombre = $event" label="Usuario" [textInput]="usuario.Nombre" validate="alphanumericNoSpace"></app-mas-input-text>
                         </div>
                         <div class="col-6">
-                            <app-input-select #sucAddDDL (valueChanged)="usuario.Sucursal_Id = $event" title="Seleccionar Sucursal" optionValue="Id_Sucursal" valueShow="NombreSucursal" label="Sucursal" [inputSelect]="usuario.Sucursal_Id"></app-input-select>
+                            <app-input-select #rolAddDDL [required]="true" (valueChanged)="usuario.Rol_Id = $event" title="Seleccionar Rol" optionValue="Id_Rol" valueShow="NombreRol" label="Rol" [inputSelect]="usuario.Rol_Id"></app-input-select>
                         </div>
                     </div>
                     <div class="row">
@@ -64,7 +63,6 @@
                             <app-mas-input-text #correoAdd [required]="true" type="email" maxlength="180" (cambioValor)="usuario.Correo = $event" label="Correo" [textInput]="usuario.Correo" validate="email"></app-mas-input-text>
                         </div>
                         <div class="col-6">
-                            <app-input-select #rolAddDDL [required]="true" (valueChanged)="usuario.Rol_Id = $event" title="Seleccionar Rol" optionValue="Id_Rol" valueShow="NombreRol" label="Rol" [inputSelect]="usuario.Rol_Id"></app-input-select>
                         </div>
                     </div>
                     <div class="row">

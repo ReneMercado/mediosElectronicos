@@ -35,20 +35,15 @@ export class AltaPlasticoComponent implements OnInit {
     public _empresaService: EmpresaService) { }
 
   async ngOnInit() {
-    let empresas = (await this._empresaService.getEmpresas(null)).Empresas;
-    this.empresaAddDDL.changeOptions(empresas);
+ 
   }
 
-  async onEmpresaChange(Id_Empresa) {
-    this.cargaMasiva.Empresa_Id = Id_Empresa;
-    this.empresa = (await this._empresaService.getEmpresa(Id_Empresa)).Empresas[0] || {};
-  }
 
   async guardarPlasticos() {
     try {
 
-      if (!this.empresaAddDDL.valid() || this.cargaMasiva.Contenido.trim() === '') {
-        swal('Campos Requeridos', 'Favor de llenar los campos correctamente', 'error');
+      if (this.cargaMasiva.Contenido.trim() === '') {
+        swal('Campos Requeridos', 'El contenido del archivo es vacio', 'error');
         return false;
       }
 

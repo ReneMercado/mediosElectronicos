@@ -3,7 +3,6 @@ import { InputSelectComponent } from '../../../components/input-select/input-sel
 import { MasInputTextComponent } from '../../../components/mas-input-text/mas-input-text.component';
 import { Usuario } from '../../../models/usuario.model';
 import { UsuarioService } from '../../../services/service.index';
-import { SucursalService } from '../../../services/sucursal/sucursal.service';
 import { RolService } from '../../../services/rol/rol.service';
 
 @Component({
@@ -17,13 +16,11 @@ export class ConsultaUsuariosComponent implements OnInit {
     @ViewChild('editModal') editModal: ElementRef;
     @ViewChild('addModal') addModal: ElementRef;
 
-    @ViewChild('sucEditDDL') sucEditDDL: InputSelectComponent;
     @ViewChild('rolEditDDL') rolEditDDL: InputSelectComponent;
     @ViewChild('nombreEdit') nombreEdit: MasInputTextComponent;
     @ViewChild('correoEdit') correoEdit: MasInputTextComponent;
     @ViewChild('aliasEdit') aliasEdit: MasInputTextComponent;
 
-    @ViewChild('sucAddDDL') sucAddDDL: InputSelectComponent;
     @ViewChild('rolAddDDL') rolAddDDL: InputSelectComponent;
     @ViewChild('nombreAdd') nombreAdd: MasInputTextComponent;
     @ViewChild('correoAdd') correoAdd: MasInputTextComponent;
@@ -43,15 +40,14 @@ export class ConsultaUsuariosComponent implements OnInit {
             cellRenderer: this.editCellRendererFunc.bind(this)
         },
         { headerName: 'Ultimo Acceso', field: 'Fec_UltAcceso', valueFormatter: (data) => this.userGrid.dateFormatter(data) },
-        { headerName: 'Alias', field: 'Alias' },
-        { headerName: 'Correo', field: 'Correo' },
+        { headerName: 'Alias', field: 'Alias', width: 300 },
+        { headerName: 'Correo', field: 'Correo', width: 300 },
         { headerName: 'Rol', field: 'Rol' },
-        { headerName: 'Sucursal', field: 'Sucursal' },
-        { headerName: 'Estatus', field: 'Estatus' }
+        { headerName: 'Estatus', field: 'Estatus', cellRenderer: this.EstatusRenderer.bind(this) }
     ];
 
 
-    constructor(public _usuarioService: UsuarioService, public _sucursalService: SucursalService,
+    constructor(public _usuarioService: UsuarioService,
         public _rolService: RolService) { }
 
     async ngOnInit() {
@@ -59,13 +55,19 @@ export class ConsultaUsuariosComponent implements OnInit {
         this.rolEditDDL.changeOptions(roles);
         this.rolAddDDL.changeOptions(roles);
 
-        let sucursales = await this._sucursalService.getSucursales();
-        this.sucEditDDL.changeOptions(sucursales);
-        this.sucAddDDL.changeOptions(sucursales);
-
         this.usuarios = await this.getUsers();
     }
 
+
+    EstatusRenderer(params) {
+        if (params.node.data.Estatus === 1) {
+            return 'Activo';
+        } else if (params.node.data.Estatus === 0) {
+            return 'Inactivo';
+        }
+
+        return params.node.data.Estatus;
+    }
 
     editCellRendererFunc(params) {
         const html = '<button type="button" class="btn-default btnCat" aria-label="Left Align" data-toggle="modal"' +
@@ -92,7 +94,6 @@ export class ConsultaUsuariosComponent implements OnInit {
             $('#editModalLabel').text('Editar Usuario: ' + this.usuario.Alias);
             $('#editModal').modal('show');
 
-            this.sucEditDDL.setOption(this.usuario.Sucursal_Id);
             this.rolEditDDL.setOption(this.usuario.Rol_Id);
         } catch (e) {
             console.log(e);
@@ -103,7 +104,6 @@ export class ConsultaUsuariosComponent implements OnInit {
         this.usuario = new Usuario('', 0, 0, '', 0, new Date(), new Date(), new Date(), 0, '', '',
             '', '', 0, '', '', '', '', '');
 
-        this.sucAddDDL.setOption(0);
         this.rolAddDDL.setOption(0);
         $('#addModal').modal('show');
     }
@@ -112,7 +112,7 @@ export class ConsultaUsuariosComponent implements OnInit {
         try {
 
             if (!this.nombreEdit.valid() || !this.correoEdit.valid() || !this.aliasEdit.valid()
-                || !this.rolEditDDL.valid() || !this.sucEditDDL.valid()) {
+                || !this.rolEditDDL.valid()) {
                 swal('Campos Requeridos', 'Favor de llenar los campos correctamente', 'error');
                 return false;
             }
@@ -128,7 +128,7 @@ export class ConsultaUsuariosComponent implements OnInit {
         try {
 
             if (!this.nombreAdd.valid() || !this.correoAdd.valid() || !this.aliasAdd.valid()
-                || !this.rolAddDDL.valid() || !this.sucAddDDL.valid()) {
+                || !this.rolAddDDL.valid()) {
                 swal('Campos Requeridos', 'Favor de llenar los campos correctamente', 'error');
                 return false;
             }

@@ -12,10 +12,10 @@
         <app-mas-input-text #nombre [required]="true" type="text" maxlength="50" (cambioValor)="empresa.Nombre = $event" label="Empresa" [textInput]="empresa.Nombre" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-4">
-        <app-mas-input-text #razon [required]="true" type="text" maxlength="50" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
+        <app-mas-input-text #razon [required]="true" type="text" maxlength="80" (cambioValor)="empresa.RazonSocial = $event" label="Razon" [textInput]="empresa.RazonSocial" validate="alphanumeric"></app-mas-input-text>
     </div>
     <div class="col-3">
-        <app-mas-input-text #RFC [required]="true" [uppercase]="true" type="text" maxlength="50" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RFC" validate="alphanumericNoSpace"></app-mas-input-text>
+        <app-mas-input-text #RFC [required]="true" [uppercase]="true" type="text" maxlength="13" (cambioValor)="empresa.RFC = $event" label="RFC" [textInput]="empresa.RFC" validate="alphanumericNoSpace"></app-mas-input-text>
     </div>
 </div>
 <div class="row">
